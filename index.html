@@ -976,108 +976,107 @@
         document.body.getAttribute('data-theme') === 'light' ? '' : 'light');
     });
 
-    // TV Series Database
-    const seriesDatabase = {
-      "godfather": {
-        title: "Godfather of Harlem",
-        poster: "https://m.media-amazon.com/images/M/MV5BZTk1NzQwYjYtOTFmYS00YzE0LWJjY2UtZDU4MGJiNGQ0ZmY5XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
-        description: "The story of crime boss Bumpy Johnson, who in the early 1960s returned from prison to find his neighborhood controlled by the Italian mob.",
-        seasons: {
+const seriesDatabase = {
+  "godfather": {
+    title: "Godfather of Harlem",
+    poster: "https://m.media-amazon.com/images/M/MV5BZTk1NzQwYjYtOTFmYS00YzE0LWJjY2UtZDU4MGJiNGQ0ZmY5XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+    description: "The story of crime boss Bumpy Johnson, who in the early 1960s returned from prison to find his neighborhood controlled by the Italian mob.",
+    seasons: {
+      "1": {
+        episodes: {
           "1": {
-            episodes: {
-              "1": {
-                title: "By Whatever Means Necessary",
-                url: "https://drive.google.com/file/d/1-BpocyAC0C3lIH9y8caPaXil3-0RpzZj/preview",
-              },
-              "2": {
-                title: "The Nitty Gritty",
-                url: "https://drive.google.com/file/d/1WlEEUTNxu07wbd_zcHAWtriXowYkcjmu/preview",
-                thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-              },
-              "3": {
-                title: "Chickens Come Home to Roost",
-                url: "https://drive.google.com/file/d/1WjDrYsNSVc3XSFVyoYoaITt-ITt_wsLg/preview",
-                thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-              },
-              "4": {
-                title: "It's All in the Game",
-                url: "https://drive.google.com/file/d/1examplelink4/preview",
-                thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-              },
-              "5": {
-                title: "I'll Take You There",
-                url: "https://drive.google.com/file/d/1examplelink5/preview",
-                thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-              },
-              "6": {
-                title: "The Battle of Rivington St.",
-                url: "https://drive.google.com/file/d/1examplelink6/preview",
-                thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-              },
-              "7": {
-                title: "Masters of War",
-                url: "https://drive.google.com/file/d/1examplelink7/preview",
-                thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-              },
-              "8": {
-                title: "How I Got Over",
-                url: "https://drive.google.com/file/d/1examplelink8/preview",
-                thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-              },
-              "9": {
-                title: "The Bonfire of the Vanities",
-                url: "https://drive.google.com/file/d/1examplelink9/preview",
-                thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-              },
-              "10": {
-                title: "They Can't Take That Away from Me",
-                url: "https://drive.google.com/file/d/1examplelink10/preview",
-                thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-              }
-            }
+            title: "By Whatever Means Necessary",
+            url: "https://drive.google.com/file/d/1-BpocyAC0C3lIH9y8caPaXil3-0RpzZj/preview",
           },
           "2": {
-            episodes: {
-              "1": {
-                title: "The Godfather of Harlem Returns",
-                url: "https://drive.google.com/file/d/1examplelink11/preview",
-                thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-              },
-                "2": {
-                title: "The Godfather of Harlem Returns",
-                url: "https://drive.google.com/file/d/1examplelink11/preview",
-                thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-              },
-              "3": {
-                title: "The Sit Down",
-                url: "https://drive.google.com/file/d/1examplelink12/preview",
-                thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-              }
-            }
+            title: "The Nitty Gritty",
+            url: "https://drive.google.com/file/d/1WlEEUTNxu07wbd_zcHAWtriXowYkcjmu/preview",
+            thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
+          },
+          "3": {
+            title: "Chickens Come Home to Roost",
+            url: "https://drive.google.com/file/d/1WjDrYsNSVc3XSFVyoYoaITt-ITt_wsLg/preview",
+            thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
+          },
+          "4": {
+            title: "It's All in the Game",
+            url: "https://drive.google.com/file/d/1examplelink4/preview",
+            thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
+          },
+          "5": {
+            title: "I'll Take You There",
+            url: "https://drive.google.com/file/d/1examplelink5/preview",
+            thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
+          },
+          "6": {
+            title: "The Battle of Rivington St.",
+            url: "https://drive.google.com/file/d/1examplelink6/preview",
+            thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
+          },
+          "7": {
+            title: "Masters of War",
+            url: "https://drive.google.com/file/d/1examplelink7/preview",
+            thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
+          },
+          "8": {
+            title: "How I Got Over",
+            url: "https://drive.google.com/file/d/1examplelink8/preview",
+            thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
+          },
+          "9": {
+            title: "The Bonfire of the Vanities",
+            url: "https://drive.google.com/file/d/1examplelink9/preview",
+            thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
+          },
+          "10": {
+            title: "They Can't Take That Away from Me",
+            url: "https://drive.google.com/file/d/1examplelink10/preview",
+            thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
           }
         }
       },
-        "3": {
-            episodes: {
-              "1": {
-                title: "The Godfather of Harlem Returns",
-                url: "https://drive.google.com/file/d/1examplelink11/preview",
-                thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-              },
-                "2": {
-                title: "The Godfather of Harlem Returns",
-                url: "https://drive.google.com/file/d/1examplelink11/preview",
-                thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-              },
-              "3": {
-                title: "The Sit Down",
-                url: "https://drive.google.com/file/d/1examplelink12/preview",
-                thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-              }
-            }
+      "2": {
+        episodes: {
+          "1": {
+            title: "The Godfather of Harlem Returns",
+            url: "https://drive.google.com/file/d/1examplelink11/preview",
+            thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
+          },
+          "2": {
+            title: "The Godfather of Harlem Returns",
+            url: "https://drive.google.com/file/d/1examplelink11/preview",
+            thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
+          },
+          "3": {
+            title: "The Sit Down",
+            url: "https://drive.google.com/file/d/1examplelink12/preview",
+            thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
           }
         }
       },
+      "3": {
+        episodes: {
+          "1": {
+            title: "The Godfather of Harlem Returns",
+            url: "https://drive.google.com/file/d/1examplelink11/preview",
+            thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
+          },
+          "2": {
+            title: "The Godfather of Harlem Returns",
+            url: "https://drive.google.com/file/d/1examplelink11/preview",
+            thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
+          },
+          "3": {
+            title: "The Sit Down",
+            url: "https://drive.google.com/file/d/1examplelink12/preview",
+            thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
+          }
+        }
+      }
+    }
+  },
+  // ... rest of your series
+};
       "ginny": {
         title: "Ginny & Georgia",
         poster: "https://m.media-amazon.com/images/M/MV5BNzQwYjE0ODItYjA0MC00ZjFjLWJhYzQtODZmM2YxY2Q5YmYxXkEyXkFqcGc@._V1_.jpg",
