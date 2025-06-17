@@ -246,7 +246,7 @@
     }
 
     footer {
-      margin-top: 60px;
+      margin-top: 40px;
       background: rgba(0,0,0,0.85);
       padding: 25px 20px;
       color: var(--text-color);
@@ -536,8 +536,8 @@
     /* Responsive grid for movies */
     .movies-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 15px;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 20px;
       margin: 20px 0;
     }
 
@@ -552,7 +552,7 @@
 
     .movie-thumbnail {
       width: 100%;
-      height: 200px;
+      height: 250px;
       object-fit: cover;
       border-radius: 8px;
       border: 2px solid #444;
@@ -568,19 +568,19 @@
     /* Responsive adjustments */
     @media (max-width: 1200px) {
       .movies-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
       }
     }
 
     @media (max-width: 900px) {
       .movies-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
       }
     }
 
     @media (max-width: 600px) {
       .movies-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
       }
       
       .preview-item {
@@ -594,7 +594,7 @@
 
     @media (max-width: 400px) {
       .movies-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
       }
       
       .preview-item {
@@ -605,8 +605,8 @@
     /* All videos section */
     .all-videos-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 15px;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 20px;
       margin: 20px 0;
     }
 
@@ -617,6 +617,35 @@
 
     .all-videos-item:hover {
       transform: scale(1.03);
+    }
+
+    /* Episode item styling */
+    .episode-item {
+      padding: 10px;
+      background: var(--card-bg);
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .episode-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: var(--secondary-color);
+    }
+
+    .watch-episode-btn {
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+
+    .watch-episode-btn:hover {
+      background: #e03e00;
     }
   </style>
 </head>
@@ -801,107 +830,8 @@
   <!-- TV Series Section -->
   <div class="section">
     <h2>Popular TV Series</h2>
-    <div class="content-preview">
-      <!-- Godfather of Harlem -->
-      <div class="preview-item" onclick="showSeasons('godfather', event)">
-        <div class="thumbnail-container" style="height: 250px;">
-          <img src="https://m.media-amazon.com/images/M/MV5BMTg4MWVjMjYtZGZhYS00MzlmLWFiYmItNDc1OGNmMzczZTM4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" 
-               alt="Godfather of Harlem" class="preview-thumbnail">
-          <div class="play-button"></div>
-        </div>
-        <div class="preview-title">Godfather of Harlem</div>
-      </div>
-      
-      <!-- Ginny and Georgia -->
-      <div class="preview-item" onclick="showSeasons('ginny', event)">
-        <div class="thumbnail-container" style="height: 250px;">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj2pzfKiwK4dJPfxW3hH4UHtfpyLZNQ9LwnQ&s" 
-               alt="Ginny and Georgia" class="preview-thumbnail">
-          <div class="play-button"></div>
-        </div>
-        <div class="preview-title">Ginny and Georgia</div>
-      </div>
-      
-      <!-- Forever -->
-      <div class="preview-item" onclick="showSeasons('forever', event)">
-        <div class="thumbnail-container" style="height: 250px;">
-          <img src="https://m.media-amazon.com/images/M/MV5BNzYxNzI2NDYtN2QxZC00YjU5LWI4YzMtY2Y5YjY5ZGY5Y2NkXkEyXkFqcGc@._V1_.jpg" 
-               alt="Forever" class="preview-thumbnail">
-          <div class="play-button"></div>
-        </div>
-        <div class="preview-title">Forever</div>
-      </div>
-      
-      <!-- Love Island -->
-      <div class="preview-item" onclick="showSeasons('loveisland', event)">
-        <div class="thumbnail-container" style="height: 250px;">
-          <img src="https://m.media-amazon.com/images/M/MV5BNDQxZDEyOTAtMDA0My00NTRjLWI0OTYtNThhZjE5Mjk4M2FmXkEyXkFqcGc@._V1_.jpg" 
-               alt="Love Island" class="preview-thumbnail">
-          <div class="play-button"></div>
-        </div>
-        <div class="preview-title">Love Island</div>
-      </div>
-      
-      <!-- Queen Charlotte -->
-      <div class="preview-item" onclick="showSeasons('queencharlotte', event)">
-        <div class="thumbnail-container" style="height: 250px;">
-          <img src="https://m.media-amazon.com/images/M/MV5BZTE3YThmYzktYjYyNi00YzY0LTk0Y2ItZjQ5ZTY3Y2RkNjU0XkEyXkFqcGc@._V1_.jpg" 
-               alt="Queen Charlotte" class="preview-thumbnail">
-          <div class="play-button"></div>
-        </div>
-        <div class="preview-title">Queen Charlotte</div>
-      </div>
-      
-      <!-- Lovecraft Country -->
-      <div class="preview-item" onclick="showSeasons('lovecraft', event)">
-        <div class="thumbnail-container" style="height: 250px;">
-          <img src="https://m.media-amazon.com/images/M/MV5BYzY0YTQwY2QtOGQ0Yi00NDJjLWE1ODItYjJkMWMwZjM3ZmY0XkEyXkFqcGc@._V1_.jpg" 
-               alt="Lovecraft Country" class="preview-thumbnail">
-          <div class="play-button"></div>
-        </div>
-        <div class="preview-title">Lovecraft Country</div>
-      </div>
-      
-      <!-- Blood and Water -->
-      <div class="preview-item" onclick="showSeasons('bloodwater', event)">
-        <div class="thumbnail-container" style="height: 250px;">
-          <img src="https://m.media-amazon.com/images/M/MV5BZTYxYThjYjctMDUxNC00OTYxLThkY2UtYjA4M2FmYTk5YzU1XkEyXkFqcGc@._V1_.jpg" 
-               alt="Blood and Water" class="preview-thumbnail">
-          <div class="play-button"></div>
-        </div>
-        <div class="preview-title">Blood and Water</div>
-      </div>
-      
-      <!-- Prison Break -->
-      <div class="preview-item" onclick="showSeasons('prisonbreak', event)">
-        <div class="thumbnail-container" style="height: 250px;">
-          <img src="https://m.media-amazon.com/images/M/MV5BMTg3NTkwNzAxOF5BMl5BanBnXkFtZTcwMjM1NjI5MQ@@._V1_.jpg" 
-               alt="Prison Break" class="preview-thumbnail">
-          <div class="play-button"></div>
-        </div>
-        <div class="preview-title">Prison Break</div>
-      </div>
-      
-      <!-- Power -->
-      <div class="preview-item" onclick="showSeasons('power', event)">
-        <div class="thumbnail-container" style="height: 250px;">
-          <img src="https://m.media-amazon.com/images/M/MV5BOTA4NTkzNjUzNV5BMl5BanBnXkFtZTgwNzg5ODExOTE@._V1_.jpg" 
-               alt="Power" class="preview-thumbnail">
-          <div class="play-button"></div>
-        </div>
-        <div class="preview-title">Power</div>
-      </div>
-      
-      <!-- Empire -->
-      <div class="preview-item" onclick="showSeasons('empire', event)">
-        <div class="thumbnail-container" style="height: 250px;">
-          <img src="https://m.media-amazon.com/images/M/MV5BMTQwNjI0OTU5NV5BMl5BanBnXkFtZTgwODQ5NDcxNjE@._V1_.jpg" 
-               alt="Empire" class="preview-thumbnail">
-          <div class="play-button"></div>
-        </div>
-        <div class="preview-title">Empire</div>
-      </div>
-    </div>
+    <div id="seriesContainer" class="content-preview"></div>
+    <div class="pagination" id="seriesPagination"></div>
     
     <!-- Seasons Modal -->
     <div id="seasonsModal" class="modal">
@@ -917,7 +847,7 @@
       <div class="modal-content" style="max-width: 800px;">
         <span class="close" onclick="closeEpisodesModal()">&times;</span>
         <h2 id="seasonTitle" style="color: var(--secondary-color);"></h2>
-        <div id="episodesContainer" class="links" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));"></div>
+        <div id="episodesContainer" class="links" style="grid-template-columns: 1fr;"></div>
       </div>
     </div>
   </div>
@@ -976,107 +906,71 @@
         document.body.getAttribute('data-theme') === 'light' ? '' : 'light');
     });
 
-const seriesDatabase = {
-  "godfather": {
-    title: "Godfather of Harlem",
-    poster: "https://m.media-amazon.com/images/M/MV5BZTk1NzQwYjYtOTFmYS00YzE0LWJjY2UtZDU4MGJiNGQ0ZmY5XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
-    description: "The story of crime boss Bumpy Johnson, who in the early 1960s returned from prison to find his neighborhood controlled by the Italian mob.",
-    seasons: {
-      "1": {
-        episodes: {
+    // TV Series Database
+    const seriesDatabase = {
+      "godfather": {
+        title: "Godfather of Harlem",
+        poster: "https://m.media-amazon.com/images/M/MV5BZTk1NzQwYjYtOTFmYS00YzE0LWJjY2UtZDU4MGJiNGQ0ZmY5XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+        description: "The story of crime boss Bumpy Johnson, who in the early 1960s returned from prison to find his neighborhood controlled by the Italian mob.",
+        seasons: {
           "1": {
-            title: "By Whatever Means Necessary",
-            url: "https://drive.google.com/file/d/1-BpocyAC0C3lIH9y8caPaXil3-0RpzZj/preview",
+            episodes: {
+              "1": {
+                title: "By Whatever Means Necessary",
+                url: "https://drive.google.com/file/d/1-BpocyAC0C3lIH9y8caPaXil3-0RpzZj/preview"
+              },
+              "2": {
+                title: "The Nitty Gritty",
+                url: "https://drive.google.com/file/d/1WlEEUTNxu07wbd_zcHAWtriXowYkcjmu/preview"
+              },
+              "3": {
+                title: "Chickens Come Home to Roost",
+                url: "https://drive.google.com/file/d/1WjDrYsNSVc3XSFVyoYoaITt-ITt_wsLg/preview"
+              },
+              "4": {
+                title: "I Am the Greatest",
+                url: "https://drive.google.com/file/d/10ZGe595c1D0hvu7jMaIG6bZPGq-t8pT7/preview"
+              },
+              "5": {
+                title: "It's All in the Game",
+                url: "https://drive.google.com/file/d/1leJsev0LaTk2VfNgDmSJbc9EiQhsEG0h/preview"
+              },
+              "6": {
+                title: "Il Canto de Malavita",
+                url: "https://drive.google.com/file/d/1Y7OBU8jj32SMW8Y1SV2v5xNXjfOCNCLc/preview"
+              },
+              "7": {
+                title: "Masters of War",
+                url: "https://drive.google.com/file/d/1KjM2oLRLzI8dMD81KZy-rvfha48GW1B7/preview"
+              },
+              "8": {
+                title: "How I Got Over",
+                url: "https://drive.google.com/file/d/1620LHXaF5yzP2Gmg4O_dwBWMcMYXlfur/preview"
+              },
+              "9": {
+                title: "Rent Strike Blues",
+                url: "https://drive.google.com/file/d/1zG0Wty-US1N4HsV8AhwQdk6Q90biwrU1/preview"
+              },
+              "10": {
+                title: "Chickens Come Home to Roost",
+                url: "https://drive.google.com/file/d/1mJqH9mXPPDMFc1xvKoi5c3FaxtahzWyh/preview"
+              }
+            }
           },
           "2": {
-            title: "The Nitty Gritty",
-            url: "https://drive.google.com/file/d/1WlEEUTNxu07wbd_zcHAWtriXowYkcjmu/preview",
-            thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-          },
-          "3": {
-            title: "Chickens Come Home to Roost",
-            url: "https://drive.google.com/file/d/1WjDrYsNSVc3XSFVyoYoaITt-ITt_wsLg/preview",
-            thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-          },
-          "4": {
-            title: "It's All in the Game",
-            url: "https://drive.google.com/file/d/1examplelink4/preview",
-            thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-          },
-          "5": {
-            title: "I'll Take You There",
-            url: "https://drive.google.com/file/d/1examplelink5/preview",
-            thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-          },
-          "6": {
-            title: "The Battle of Rivington St.",
-            url: "https://drive.google.com/file/d/1examplelink6/preview",
-            thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-          },
-          "7": {
-            title: "Masters of War",
-            url: "https://drive.google.com/file/d/1examplelink7/preview",
-            thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-          },
-          "8": {
-            title: "How I Got Over",
-            url: "https://drive.google.com/file/d/1examplelink8/preview",
-            thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-          },
-          "9": {
-            title: "The Bonfire of the Vanities",
-            url: "https://drive.google.com/file/d/1examplelink9/preview",
-            thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-          },
-          "10": {
-            title: "They Can't Take That Away from Me",
-            url: "https://drive.google.com/file/d/1examplelink10/preview",
-            thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
+            episodes: {
+              "1": {
+                title: "The Godfather of Harlem Returns",
+                url: "https://drive.google.com/file/d/1examplelink11/preview"
+              },
+              "2": {
+                title: "The Sit Down",
+                url: "https://drive.google.com/file/d/1examplelink12/preview"
+              }
+            }
           }
         }
       },
-      "2": {
-        episodes: {
-          "1": {
-            title: "The Godfather of Harlem Returns",
-            url: "https://drive.google.com/file/d/1examplelink11/preview",
-            thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-          },
-          "2": {
-            title: "The Godfather of Harlem Returns",
-            url: "https://drive.google.com/file/d/1examplelink11/preview",
-            thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-          },
-          "3": {
-            title: "The Sit Down",
-            url: "https://drive.google.com/file/d/1examplelink12/preview",
-            thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-          }
-        }
-      },
-      "3": {
-        episodes: {
-          "1": {
-            title: "The Godfather of Harlem Returns",
-            url: "https://drive.google.com/file/d/1examplelink11/preview",
-            thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-          },
-          "2": {
-            title: "The Godfather of Harlem Returns",
-            url: "https://drive.google.com/file/d/1examplelink11/preview",
-            thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-          },
-          "3": {
-            title: "The Sit Down",
-            url: "https://drive.google.com/file/d/1examplelink12/preview",
-            thumbnail: "https://m.media-amazon.com/images/M/MV5BNzU5Yzk1ODktNzA3OS00YzQ0LWI5YzItYzhlODQ2NThjYjFkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-          }
-        }
-      }
-    }
-  },
-  // ... rest of your series
-};
       "ginny": {
         title: "Ginny & Georgia",
         poster: "https://m.media-amazon.com/images/M/MV5BNzQwYjE0ODItYjA0MC00ZjFjLWJhYzQtODZmM2YxY2Q5YmYxXkEyXkFqcGc@._V1_.jpg",
@@ -1086,13 +980,131 @@ const seriesDatabase = {
             episodes: {
               "1": {
                 title: "Pilot",
-                url: "https://drive.google.com/file/d/1examplelink13/preview",
-                thumbnail: "https://m.media-amazon.com/images/M/MV5BNzQwYjE0ODItYjA0MC00ZjFjLWJhYzQtODZmM2YxY2Q5YmYxXkEyXkFqcGc@._V1_.jpg"
+                url: "https://drive.google.com/file/d/1zMDL4-MmhUh2QCCtl9ODxPfgY19XLMYn/preview"
               },
               "2": {
                 title: "It's a Face Not a Mask",
-                url: "https://drive.google.com/file/d/1examplelink14/preview",
-                thumbnail: "https://m.media-amazon.com/images/M/MV5BNzQwYjE0ODItYjA0MC00ZjFjLWJhYzQtODZmM2YxY2Q5YmYxXkEyXkFqcGc@._V1_.jpg"
+                url: "https://drive.google.com/file/d/16n45IF7CEZLvHPkKb6b6Qd5Af-E3u-WY/preview"
+              },
+              "3": {
+                title: "Next Level Rich People Sh*t",
+                url: "https://drive.google.com/file/d/1LCO7KRuQOm6Rpt6FAAwSL7323bczrteM/preview"
+              },
+              "4": {
+                title: "Boyfriend, Girlfriend",
+                url: "https://drive.google.com/file/d/1MFlaAAB6VQRo6sl7u9pheH33JJ_zhXz4/preview"
+              },
+              "5": {
+                title: "It's Not a Party, It's an Experience",
+                url: "https://drive.google.com/file/d/1-nU5_VvcnfgL3H2GjrHQx276ykMcj_-8/preview"
+              },
+              "6": {
+                title: "I'm Triggered",
+                url: "https://drive.google.com/file/d/1XZkvmDq9LcUJY_pU00fs4pWp4iom18gl/preview"
+              },
+              "7": {
+                title: "Happy Sweet Sixteen, Jerk",
+                url: "https://drive.google.com/file/d/1JZziwYCh1X_EdSUM1JVtqcXh_zfnkpgT/preview"
+              },
+              "8": {
+                title: "Check One, Check Other",
+                url: "https://drive.google.com/file/d/1I49MgfKeS807bToIoRjQLxlarc-6t1n8/preview"
+              },
+              "9": {
+                title: "Feelings Are Hard",
+                url: "https://drive.google.com/file/d/14RTkstyQS2TR4iQ9RnszxCkrjX3AdJ7U/preview"
+              },
+              "10": {
+                title: "The Worst Betrayal Since Jordyn and Kylie",
+                url: "https://drive.google.com/file/d/1nZc3RNjhDt6sAvmBt2p_uaBsYc5vqR9p/preview"
+              }
+            }
+          },
+          "2": {
+            episodes: {
+              "1": {
+                title: "Welcome Back, Bitches!",
+                url: "https://drive.google.com/file/d/1SlgVHobOMmg5yDLwHyflyhJFXrapVsDU/preview"
+              },
+              "2": {
+                title: "Why Does Everything Have to Be So Hard?",
+                url: "https://drive.google.com/file/d/1zb2E9SjU_Gv4c1AjeUwxT6ShPA--CjxT/preview"
+              },
+              "3": {
+                title: "What Are You Playing At, Georgia?",
+                url: "https://drive.google.com/file/d/19XfI623cIfZQ5qL6kpWFYDp8MZFL4Jws/preview"
+              },
+              "4": {
+                title: "Happy My Birthday To You",
+                url: "https://drive.google.com/file/d/1OBSU3pVicDgqYHw_63pMLObyCq584pSz/preview"
+              },
+              "5": {
+                title: "Latkes Are Lit",
+                url: "https://drive.google.com/file/d/1imHYJXjqCpHD4au-ivtCMFWITXJ9lHTT/preview"
+              },
+              "6": {
+                title: "A Very Merry Ginny & Georgia",
+                url: "https://drive.google.com/file/d/1ttghE5d8Ig5YF3TpiMxs8QrpVKFnBea9/preview"
+              },
+              "7": {
+                title: "We're Going To Serenade The Hell Out of You",
+                url: "https://drive.google.com/file/d/1MDipVijWbC2B8B1XLc8JlVL0qQX_oU7D/preview"
+              },
+              "8": {
+                title: "Hark! Darkness Descends!",
+                url: "https://drive.google.com/file/d/1mTEzbnNFP82l6YueTBmFdEx-puWgdGhT/preview"
+              },
+              "9": {
+                title: "Kill Gill",
+                url: "https://drive.google.com/file/d/119MnTNMMrp5q6CK5F6biYxT5eykYq8mT/preview"
+              },
+              "10": {
+                title: "I'm No Cinderella",
+                url: "https://drive.google.com/file/d/1pl9hdTYN4G4IIm4ohYloSGeYtn1PD6RZ/preview"
+              }
+            }
+          },
+          "3": {
+            episodes: {
+              "1": {
+                title: "Episode 1",
+                url: "https://drive.google.com/file/d/1Gyc8Gxd3HXe2PWVdaWxSG-6PWkvceLRw/preview"
+              },
+              "2": {
+                title: "Episode 2",
+                url: "https://drive.google.com/file/d/1kuhl4OniF9NVbCrheLGdHfkSnhHMIjr9/preview"
+              },
+              "3": {
+                title: "Episode 3",
+                url: "https://drive.google.com/file/d/16LF-g12qJ0gNsTWAV7-fN6-H4qlKV0RY/preview"
+              },
+              "4": {
+                title: "Episode 4",
+                url: "https://drive.google.com/file/d/1Da7bPYoAhqIxqcOEAy9LkoM7qcdGuiFV/preview"
+              },
+              "5": {
+                title: "Episode 5",
+                url: "https://drive.google.com/file/d/1Pkt30hr_hLxIMlbGSGws_kf0msDr_LWT/preview"
+              },
+              "6": {
+                title: "Episode 6",
+                url: "https://drive.google.com/file/d/1ThYzrA7FH-QlQgU0VpWTwn8q2D13ivd_/preview"
+              },
+              "7": {
+                title: "Episode 7",
+                url: "https://drive.google.com/file/d/1TidfvrfvyPA8fJf9mYrsBeSQHqD2BNR3/preview"
+              },
+              "8": {
+                title: "Episode 8",
+                url: "https://drive.google.com/file/d/1cey2uMbRshO6zgwRVnwF2omd2cwFke4B/preview"
+              },
+              "9": {
+                title: "Episode 9",
+                url: "https://drive.google.com/file/d/18AFxpJRf36EgFwsLSFDZdqp0GrQh0bXg/preview"
+              },
+              "10": {
+                title: "Episode 10",
+                url: "https://drive.google.com/file/d/19ITil8W_N4v_SBuOINIUBbxogMG5pceZ/preview"
               }
             }
           }
@@ -1106,9 +1118,20 @@ const seriesDatabase = {
           "1": {
             episodes: {
               "1": {
-                title: "Andre and Sarah",
-                url: "https://drive.google.com/file/d/1YhVpBsJIgjdRAvCLWucLZ41TEFVIatd2/preview",
-                thumbnail: "https://m.media-amazon.com/images/M/MV5BNzYxNzI2NDYtN2QxZC00YjU5LWI4YzMtY2Y5YjY5ZGY5Y2NkXkEyXkFqcGc@._V1_.jpg"
+                title: "Episode 1",
+                url: "https://drive.google.com/file/d/1YhVpBsJIgjdRAvCLWucLZ41TEFVIatd2/preview"
+              },
+              "2": {
+                title: "Episode 2",
+                url: "https://drive.google.com/file/d/1uSPD4hNvlArmnAM0vJvv3_PkQ7eHLZtR/preview"
+              },
+              "3": {
+                title: "Episode 3",
+                url: "https://drive.google.com/file/d/1YBtocPELs0x3bOPQOC8fTYqnwrWErFra/preview"
+              },
+              "4": {
+                title: "Episode 4",
+                url: "https://drive.google.com/file/d/1TEH2DZg1YFbsOV-q8JcoTBQO__Aw2gSJ/preview"
               }
             }
           }
@@ -1123,8 +1146,19 @@ const seriesDatabase = {
             episodes: {
               "1": {
                 title: "Episode 1",
-                url: "https://drive.google.com/file/d/1examplelink16/preview",
-                thumbnail: "https://m.media-amazon.com/images/M/MV5BNDQxZDEyOTAtMDA0My00NTRjLWI0OTYtNThhZjE5Mjk4M2FmXkEyXkFqcGc@._V1_.jpg"
+                url: "https://drive.google.com/file/d/1va01lm5ZZKzKdFZOioGXWWlx-JodaPnv/preview"
+              },
+              "2": {
+                title: "Episode 2",
+                url: "https://drive.google.com/file/d/1TIA1OgbiPT4rjEEQYVTHAT1xPQP7bUbH/preview"
+              },
+              "3": {
+                title: "Episode 3",
+                url: "https://drive.google.com/file/d/1PO6-vGHcL3chyoVfkNQzcFufjnV5Tuhf/preview"
+              },
+              "4": {
+                title: "Episode 4",
+                url: "https://drive.google.com/file/d/1G2vK92F1IiXrBfV2_aYi7LCzrIQnAjR_/preview"
               }
             }
           }
@@ -1139,8 +1173,7 @@ const seriesDatabase = {
             episodes: {
               "1": {
                 title: "Queen to Be",
-                url: "https://drive.google.com/file/d/1examplelink17/preview",
-                thumbnail: "https://m.media-amazon.com/images/M/MV5BZTE3YThmYzktYjYyNi00YzY0LTk0Y2ItZjQ5ZTY3Y2RkNjU0XkEyXkFqcGc@._V1_.jpg"
+                url: "https://drive.google.com/file/d/1examplelink17/preview"
               }
             }
           }
@@ -1155,8 +1188,7 @@ const seriesDatabase = {
             episodes: {
               "1": {
                 title: "Sundown",
-                url: "https://drive.google.com/file/d/1examplelink18/preview",
-                thumbnail: "https://m.media-amazon.com/images/M/MV5BYzY0YTQwY2QtOGQ0Yi00NDJjLWE1ODItYjJkMWMwZjM3ZmY0XkEyXkFqcGc@._V1_.jpg"
+                url: "https://drive.google.com/file/d/1examplelink18/preview"
               }
             }
           }
@@ -1171,8 +1203,7 @@ const seriesDatabase = {
             episodes: {
               "1": {
                 title: "Episode 1",
-                url: "https://drive.google.com/file/d/1examplelink19/preview",
-                thumbnail: "https://m.media-amazon.com/images/M/MV5BZTYxYThjYjctMDUxNC00OTYxLThkY2UtYjA4M2FmYTk5YzU1XkEyXkFqcGc@._V1_.jpg"
+                url: "https://drive.google.com/file/d/1examplelink19/preview"
               }
             }
           }
@@ -1187,8 +1218,43 @@ const seriesDatabase = {
             episodes: {
               "1": {
                 title: "Pilot",
-                url: "https://drive.google.com/file/d/1examplelink20/preview",
-                thumbnail: "https://m.media-amazon.com/images/M/MV5BMTg3NTkwNzAxOF5BMl5BanBnXkFtZTcwMjM1NjI5MQ@@._V1_.jpg"
+                url: "https://drive.google.com/file/d/1S8PEvdbiBwsEYbRWMFQQxFl90TmsE-yx/preview"
+              },
+              "2": {
+                title: "Allen",
+                url: "https://drive.google.com/file/d/1yrxtUxAOqagVwz4yPmQlnNYVCeNit-LI/preview"
+              },
+              "3": {
+                title: "Cell Test",
+                url: "https://drive.google.com/file/d/1llSB-1AHJfZZ8CegtEzF9xtJZS8p5YVy/preview"
+              },
+              "4": {
+                title: "Cute Poison",
+                url: "https://drive.google.com/file/d/17SemluiyIxepug2bkA3vsnlL6P3ByM28/preview"
+              },
+              "5": {
+                title: "English, Fitz or Percy",
+                url: "https://drive.google.com/file/d/1Nu3EadWFxfdtoOdlEAGx1cuxya-ML05A/preview"
+              },
+              "6": {
+                title: "Riots, Drills and the Devil",
+                url: "https://drive.google.com/file/d/1valQ09z_DBXpi4Cd4gykIndQ_Oc9ZME4/preview"
+              },
+              "7": {
+                title: "Riots, Drills and the Devil (Part 2)",
+                url: "https://drive.google.com/file/d/1IhOqiStZ4puEx1ZfzuEWPvKtv8DiQ3V1/preview"
+              },
+              "8": {
+                title: "The Old Head",
+                url: "https://drive.google.com/file/d/1Q9RyDcI73xg0dwVnFv_li-BVv4z9wtBh/preview"
+              },
+              "9": {
+                title: "Tweener",
+                url: "https://drive.google.com/file/d/1g53-aPlap6Q2jvZtKrhAFLl6A2PxeRs8/preview"
+              },
+              "10": {
+                title: "Sleight of Hand",
+                url: "https://drive.google.com/file/d/1rI_7uTF768XDmiAdoa4dnYAui4CuknHB/preview"
               }
             }
           }
@@ -1203,8 +1269,7 @@ const seriesDatabase = {
             episodes: {
               "1": {
                 title: "Not Exactly How We Planned",
-                url: "https://drive.google.com/file/d/1examplelink21/preview",
-                thumbnail: "https://m.media-amazon.com/images/M/MV5BOTA4NTkzNjUzNV5BMl5BanBnXkFtZTgwNzg5ODExOTE@._V1_.jpg"
+                url: "https://drive.google.com/file/d/1examplelink21/preview"
               }
             }
           }
@@ -1219,8 +1284,173 @@ const seriesDatabase = {
             episodes: {
               "1": {
                 title: "Pilot",
-                url: "https://drive.google.com/file/d/1examplelink22/preview",
-                thumbnail: "https://m.media-amazon.com/images/M/MV5BMTQwNjI0OTU5NV5BMl5BanBnXkFtZTgwODQ5NDcxNjE@._V1_.jpg"
+                url: "https://drive.google.com/file/d/1examplelink22/preview"
+              }
+            }
+          }
+        }
+      },
+      "loveisblind": {
+        title: "Love Is Blind",
+        poster: "https://m.media-amazon.com/images/M/MV5BODM4ODk3NDY0Nl5BMl5BanBnXkFtZTgwOTY0OTQxNzM@._V1_.jpg",
+        description: "Singles who want to be loved for who they are, rather than what they look like, have signed up for a less conventional approach to modern dating.",
+        seasons: {
+          "1": {
+            episodes: {
+              "1": {
+                title: "Is Love Blind?",
+                url: "https://drive.google.com/file/d/19FSIjbP2fPx8bQzXm10KVpj0tYkn1kvP/preview"
+              },
+              "2": {
+                title: "Will You Marry Me?",
+                url: "https://drive.google.com/file/d/1g9rgY-byPvwbB5Vl-dxgz61iE8W9bg1o/preview"
+              }
+            }
+          }
+        }
+      },
+      "breakingbad": {
+        title: "Breaking Bad",
+        poster: "https://m.media-amazon.com/images/M/MV5BYmQ4ODYwNmYtODkyOS00ODY0LWIyNjAtYTI5NDY0MDA2YmIwXkEyXkFqcGc@._V1_.jpg",
+        description: "A high school chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine in order to secure his family's future.",
+        seasons: {
+          "1": {
+            episodes: {
+              "1": {
+                title: "Pilot",
+                url: "https://drive.google.com/file/d/1examplelink23/preview"
+              }
+            }
+          }
+        }
+      },
+      "bridgerton": {
+        title: "Bridgerton",
+        poster: "https://m.media-amazon.com/images/M/MV5BZmNjYzFhM2ItNmUxZi00NDk5LWFkYjMtYzFmMTg0YjAyYzIyXkEyXkFqcGc@._V1_.jpg",
+        description: "The eight close-knit siblings of the Bridgerton family look for love and happiness in London high society.",
+        seasons: {
+          "1": {
+            episodes: {
+              "1": {
+                title: "Diamond of the First Water",
+                url: "https://drive.google.com/file/d/1examplelink24/preview"
+              }
+            }
+          }
+        }
+      },
+      "duster": {
+        title: "Duster",
+        poster: "https://m.media-amazon.com/images/M/MV5BZWI4Y2Y3YjItZTEyYy00N2YxLTk0Y2ItY2Q5YjI3Y2Q5Y2Q5XkEyXkFqcGc@._V1_.jpg",
+        description: "A getaway driver for a crime syndicate in the 1970s Southwest.",
+        seasons: {
+          "1": {
+            episodes: {
+              "1": {
+                title: "Episode 1",
+                url: "https://drive.google.com/file/d/10l4atRVJqfvTr8EcVdTs4_K4-QDiz3RY/preview"
+              },
+              "2": {
+                title: "Suspicious Minds",
+                url: "https://drive.google.com/file/d/1qjy_KsVhp3WeQjM5swaeQ1ONHt-6WbHV/preview"
+              },
+              "3": {
+                title: "Episode 3",
+                url: "https://drive.google.com/file/d/1cQaWSz6Vk19HRFIlzgR34vpUwZwoNDQH/preview"
+              },
+              "4": {
+                title: "Episode 4",
+                url: "https://drive.google.com/file/d/1_7w0ngVSQHxJ0uU5w5T41lJu4wFMpj9S/preview"
+              }
+            }
+          }
+        }
+      },
+      "strangerthings": {
+        title: "Stranger Things",
+        poster: "https://m.media-amazon.com/images/M/MV5BMDZkYmVhNjMtNWU4MC00MDQxLWE3MjYtZGMzZWI1ZjhlOWJmXkEyXkFqcGc@._V1_.jpg",
+        description: "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces and one strange little girl.",
+        seasons: {
+          "1": {
+            episodes: {
+              "1": {
+                title: "Chapter One: The Vanishing of Will Byers",
+                url: "https://drive.google.com/file/d/1examplelink25/preview"
+              }
+            }
+          }
+        }
+      },
+      "houseofdragon": {
+        title: "House of the Dragon",
+        poster: "https://m.media-amazon.com/images/M/MV5BZjBiOGIyY2YtOTA3OC00YzY1LThkYjktMGRkYTNhNTExY2I2XkEyXkFqcGc@._V1_.jpg",
+        description: "An internal succession war within House Targaryen at the height of its power, 172 years before the birth of Daenerys Targaryen.",
+        seasons: {
+          "1": {
+            episodes: {
+              "1": {
+                title: "The Heirs of the Dragon",
+                url: "https://drive.google.com/file/d/1examplelink26/preview"
+              }
+            }
+          }
+        }
+      },
+      "vampirediaries": {
+        title: "The Vampire Diaries",
+        poster: "https://m.media-amazon.com/images/M/MV5BMDk3YzgxNDQtNTEzOS00NDMyLWFlYmYtYTZlMDk1NDkxNmMyXkEyXkFqcGc@._V1_.jpg",
+        description: "The lives, loves, dangers and disasters in the town of Mystic Falls, Virginia. Creatures of unspeakable horror lurk beneath this town as a teenage girl is suddenly torn between two vampire brothers.",
+        seasons: {
+          "1": {
+            episodes: {
+              "1": {
+                title: "Pilot",
+                url: "https://drive.google.com/file/d/1examplelink27/preview"
+              }
+            }
+          }
+        }
+      },
+      "walkingdead": {
+        title: "The Walking Dead",
+        poster: "https://m.media-amazon.com/images/M/MV5BZmU5NTcwNjktODIwMi00ZmZkLTk4ZWUtYzVjZWQ5ZTZjN2RlXkEyXkFqcGc@._V1_.jpg",
+        description: "Sheriff Deputy Rick Grimes wakes up from a coma to learn the world is in ruins and must lead a group of survivors to stay alive.",
+        seasons: {
+          "1": {
+            episodes: {
+              "1": {
+                title: "Days Gone Bye",
+                url: "https://drive.google.com/file/d/1examplelink28/preview"
+              }
+            }
+          }
+        }
+      },
+      "shogun": {
+        title: "Shogun",
+        poster: "https://m.media-amazon.com/images/M/MV5BZjA2MWI1YjQtNzU5MC00YzYyLWI0MTYtZTE5YjQwZThkZTQ5XkEyXkFqcGc@._V1_.jpg",
+        description: "When a mysterious European ship is found marooned in a nearby fishing village, Lord Yoshii Toranaga discovers secrets that could tip the scales of power.",
+        seasons: {
+          "1": {
+            episodes: {
+              "1": {
+                title: "Episode 1",
+                url: "https://drive.google.com/file/d/1DGwtJHJzihw_kTKYBF3zbycZtCcNpUNR/preview"
+              }
+            }
+          }
+        }
+      },
+      "fightnight": {
+        title: "Fight Night: The Million Dollar Heist",
+        poster: "https://m.media-amazon.com/images/M/MV5BZjA2MWI1YjQtNzU5MC00YzYyLWI0MTYtZTE5YjQwZThkZTQ5XkEyXkFqcGc@._V1_.jpg",
+        description: "A crime drama based on the true story of an armed robbery that took place the night Muhammad Ali fought in Atlanta in 1970.",
+        seasons: {
+          "1": {
+            episodes: {
+              "1": {
+                title: "Episode 1",
+                url: "https://drive.google.com/file/d/12rzPogIySsXxLowlOauG7trNfrmuqJ-z/preview"
               }
             }
           }
@@ -1268,17 +1498,10 @@ const seriesDatabase = {
         const episodeItem = document.createElement('div');
         episodeItem.className = 'episode-item';
         episodeItem.innerHTML = `
-          <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
-            <img src="${episode.thumbnail}" alt="${episode.title}" 
-                 style="width: 120px; height: 70px; object-fit: cover; border-radius: 5px;">
-            <div>
-              <h4 style="margin: 0; color: var(--secondary-color);">Episode ${episodeNum}: ${episode.title}</h4>
-              <button onclick="openModal('${episode.url}', '${series.title} S${seasonNum}E${episodeNum}')" 
-                      style="background: var(--primary-color); color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer;">
-                Watch Now
-              </button>
-            </div>
-          </div>
+          <div class="episode-title">Episode ${episodeNum}: ${episode.title}</div>
+          <button class="watch-episode-btn" onclick="openModal('${episode.url}', '${series.title} S${seasonNum}E${episodeNum}: ${episode.title}')">
+            Watch Now
+          </button>
         `;
         episodesContainer.appendChild(episodeItem);
       }
@@ -1399,7 +1622,7 @@ const seriesDatabase = {
         year: "2023", 
         url: "https://drive.google.com/file/d/1w8PyCcbOlV2WKo5CsQoN8_LWDWLvPGds/preview", 
         type: "movie",
-        thumbnail: "https://m.media-amazon.com/images/M/MV5BMDkxMTUxOTQtYzM4Yi00YzA2LTgzOTYtNDg2NTliODE0ZTRjXkEyXkFqcGc@._V1_.jpg"
+        thumbnail: "https://m.media-amazon.com/images/M/MV5BMDY1N2RiYWMtMTNmMy00MWQzLTlkYzAtYzRlZmM5OGZhMjUwXkEyXkFqcGc@._V1_.jpg"
       },
       { 
         title: "Sarafina", 
@@ -1497,7 +1720,7 @@ const seriesDatabase = {
         year: "2016", 
         url: "https://drive.google.com/file/d/1RnUbq8___fcKDWe5_WKABXxo_bhp0Tct/preview", 
         type: "movie",
-        thumbnail: "https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Beyonce_-_Lemonade_%28Official_Album_Cover%29.png/250px-Beyonce_-_Lemonade_%28Official_Album_Cover%29.png"
+        thumbnail: "https://upload.wikimedia.org/wikipedia/en/thumb/6/69/Beyonce_-_Lemonade_%28Official_Album_Cover%29.png/250px-Beyonce_-_Lemonade_%28Official_Album_Cover%29.png"
       },
       { 
         title: "The Monkey", 
@@ -1581,7 +1804,7 @@ const seriesDatabase = {
         year: "2016", 
         url: "https://drive.google.com/file/d/1pb2jr3UTQ1VBUm7lXOiWJxqyZY782QNx/preview", 
         type: "movie",
-        thumbnail: "https://m.media-amazon.com/images/M/MV5BMjA2NzEzNjIwNl5BMl5BanBnXkFtZTgwNzgwMTEzNzE@._V1_.jpg"
+        thumbnail: "https://m.media-amazon.com/images/M/MV5BMTg3NTkwNzAxOF5BMl5BanBnXkFtZTgwMjM1NjI5MQ@@._V1_.jpg"
       },
       { 
         title: "Cadillac Records", 
@@ -1595,7 +1818,7 @@ const seriesDatabase = {
         year: "2003", 
         url: "https://drive.google.com/file/d/1Rzs7wxEs25RBIqGutT8r9v2PXY6GXipc/preview", 
         type: "movie",
-        thumbnail: "https://m.media-amazon.com/images/M/MV5BZWM2ZjA2OTctZmRhMy00ZDIzLTkwZGQtYTRlNmQwZWZmMDBlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+        thumbnail: "https://m.media-amazon.com/images/M/MV5BZmU5NTcwNjktODIwMi00ZmZkLTk4ZWUtYzVjZWQ5ZTZjN2RlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
       },
       { 
         title: "Get Out", 
@@ -1644,7 +1867,7 @@ const seriesDatabase = {
         year: "2023", 
         url: "https://drive.google.com/file/d/12gQgIn5a9_BWlh0V_WgnrVvGyChvTCB0/preview", 
         type: "movie",
-        thumbnail: "https://m.media-amazon.com/images/M/MV5BOWY0MTRmY2YtMzBlYi00NjlkLThkZWYtMmE2NzJiZmIzODFkXkEyXkFqcGc@._V1_.jpg"
+        thumbnail: "https://m.media-amazon.com/images/M/MV5BOWY0MTRmY2YtMzBlYi00NDk5LWFkYjMtYzFmMTg0YjAyYzIyXkEyXkFqcGc@._V1_.jpg"
       },
       { 
         title: "Creed", 
@@ -1756,14 +1979,14 @@ const seriesDatabase = {
         year: "1987", 
         url: "https://drive.google.com/file/d/1GCFi6mUv4pUPE3AqHuck0Pjb9T-s1acU/preview", 
         type: "movie",
-        thumbnail: "https://m.media-amazon.com/images/M/MV5BYjJkMWQyMzctZGQ5ZS00YWM3LWI2OWQtNjIxNzNlMWY3YzY2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+        thumbnail: "https://m.media-amazon.com/images/M/MV5BZWJjMjdhNGEtZjEyMi00OTg2LTllMzQtN2JlZWNjYzI4YzFhXkEyXkFqcGc@._V1_.jpg"
       },
       { 
         title: "A Nightmare on Elm Street", 
         year: "2010", 
         url: "https://drive.google.com/file/d/18rtJ8oHyykOiYPXrRqQpofd7B9H_jxg2/preview", 
         type: "movie",
-        thumbnail: "https://m.media-amazon.com/images/M/MV5BODIxMTQ0NTIxM15BMl5BanBnXkFtZTcwMzY1NDAyMw@@._V1_FMjpg_UX1000_.jpg"
+        thumbnail: "https://m.media-amazon.com/images/M/MV5BMTk0MTQ3NDQ4Ml5BMl5BanBnXkFtZTcwOTQ3OTQzMw@@._V1_.jpg"
       },
       { 
         title: "A United Kingdom", 
@@ -2033,7 +2256,7 @@ const seriesDatabase = {
         const movieItem = document.createElement('div');
         movieItem.className = 'movie-item';
         movieItem.innerHTML = `
-          <div class="thumbnail-container" style="height: 200px;">
+          <div class="thumbnail-container" style="height: 250px;">
             <img src="${movie.thumbnail}" alt="${movie.title}" 
                  onerror="this.src='https://via.placeholder.com/300x450?text=No+Thumbnail'">
             <div class="play-button"></div>
@@ -2067,6 +2290,57 @@ const seriesDatabase = {
       }
     }
 
+    // Series pagination
+    const seriesPerPage = 10;
+    let currentSeriesPage = 1;
+    const seriesContainer = document.getElementById('seriesContainer');
+    const seriesPagination = document.getElementById('seriesPagination');
+
+    function displaySeries(page) {
+      seriesContainer.innerHTML = '';
+      const start = (page - 1) * seriesPerPage;
+      const end = start + seriesPerPage;
+      const seriesKeys = Object.keys(seriesDatabase).slice(start, end);
+      
+      seriesKeys.forEach(seriesId => {
+        const series = seriesDatabase[seriesId];
+        const previewItem = document.createElement('div');
+        previewItem.className = 'preview-item';
+        previewItem.innerHTML = `
+          <div class="thumbnail-container" style="height: 250px;">
+            <img src="${series.poster}" alt="${series.title}" class="preview-thumbnail"
+                 onerror="this.src='https://via.placeholder.com/300x450?text=No+Thumbnail'">
+            <div class="play-button"></div>
+          </div>
+          <div class="preview-title">${series.title}</div>
+        `;
+        previewItem.onclick = (e) => showSeasons(seriesId, e);
+        seriesContainer.appendChild(previewItem);
+      });
+      
+      // Update series pagination buttons
+      updateSeriesPagination();
+    }
+
+    function updateSeriesPagination() {
+      const totalSeries = Object.keys(seriesDatabase).length;
+      const totalPages = Math.ceil(totalSeries / seriesPerPage);
+      
+      seriesPagination.innerHTML = '';
+      
+      for (let i = 1; i <= totalPages; i++) {
+        const pageBtn = document.createElement('button');
+        pageBtn.className = 'page-btn';
+        if (i === currentSeriesPage) pageBtn.classList.add('active');
+        pageBtn.textContent = i;
+        pageBtn.onclick = () => {
+          currentSeriesPage = i;
+          displaySeries(currentSeriesPage);
+        };
+        seriesPagination.appendChild(pageBtn);
+      }
+    }
+
     // All videos function
     function showAllVideos() {
       const allVideosSection = document.getElementById('allVideosSection');
@@ -2093,7 +2367,7 @@ const seriesDatabase = {
           videoItem.className = 'all-videos-item';
           
           videoItem.innerHTML = `
-            <div class="thumbnail-container" style="height: 200px;">
+            <div class="thumbnail-container" style="height: 250px;">
               <img src="${video.thumbnail}" alt="${video.title}" 
                    onerror="this.src='https://via.placeholder.com/300x450?text=No+Thumbnail'">
               <div class="play-button"></div>
@@ -2106,8 +2380,9 @@ const seriesDatabase = {
         });
     }
 
-    // Initialize movies display
+    // Initialize movies and series display
     displayMovies(currentPage);
+    displaySeries(currentSeriesPage);
   </script>
 </body>
 </html>
