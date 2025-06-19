@@ -11,6 +11,21 @@
   <meta name="google-site-verification" content="SxXcwQdqUlWLjt456JwV8YfWjovUXvFl_CIgtUGweD0" />
   <title>TV Yami – Free SA & US TV Shows + Movies</title>
 
+  <!-- Schema.org markup for Google -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "TV Yami",
+      "url": "https://tvyami.online",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://tvyami.online/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
+
   <!-- Ads with proper async loading to prevent blocking -->
   <script async src='//pl26630947.profitableratecpm.com/91/50/ce/9150ce4b254464961b06ccaa256200ea.js'></script>
   <script async src='//pl26640661.profitableratecpm.com/32/da/24/32da24bbb349b1c40dc2190cabe48290.js'></script>
@@ -681,11 +696,17 @@
   </div>
 
   <button class="watch-now" onclick="window.open('https://tvyami.blogspot.com/', '_blank')">🎬 Watch Now</button>
-  <button class="watch-now" onclick="showAllVideos()">📺 Show All Videos (A-Z)</button>
+  <button class="watch-now" onclick="showAllVideos()">📺 Show All Movies</button>
+  <button class="watch-now" onclick="showAllSeries()">📺 Show All Series</button>
 
   <div id="allVideosSection" style="display:none;">
-    <h2 style="color: #FFD700; text-shadow: 1px 1px 3px #000;">All Videos (A-Z)</h2>
+    <h2 style="color: #FFD700; text-shadow: 1px 1px 3px #000;">All Movies (A-Z)</h2>
     <div id="allVideosContainer" class="all-videos-grid"></div>
+  </div>
+
+  <div id="allSeriesSection" style="display:none;">
+    <h2 style="color: #FFD700; text-shadow: 1px 1px 3px #000;">All Series (A-Z)</h2>
+    <div id="allSeriesContainer" class="all-videos-grid"></div>
   </div>
 
   <!-- Google Drive Videos Section (Now First) -->
@@ -862,6 +883,8 @@
   <div class="section">
     <h2>Why TV Yami?</h2>
     <p>TV Yami brings you the hottest Movies and binge-worthy TV Shows from around the world. From explosive action to heartwarming drama, there's something here for every mood. Stay tuned and never miss a moment of entertainment!</p>
+    <p>Watch free South African TV shows, American series, and the latest movies all in one place. Our collection is constantly updated with new content to keep you entertained. Whether you're looking for Skeem Saam, Ithonga, Genesis, Xrepo, or Hollywood blockbusters, TV Yami has it all.</p>
+    <p>Bookmark TV Yami for easy access to your favorite shows and movies. No subscriptions, no fees - just free streaming entertainment whenever you want it.</p>
   </div>
 
   <!-- Bottom Ad Position -->
@@ -1132,6 +1155,22 @@
               "4": {
                 title: "Episode 4",
                 url: "https://drive.google.com/file/d/1TEH2DZg1YFbsOV-q8JcoTBQO__Aw2gSJ/preview"
+              },
+              "5": {
+                title: "The Vineyard",
+                url: "https://drive.google.com/file/d/1i6HQbzPGYR_jwHKIEDocHmWNE_OS339X/preview"
+              },
+              "6": {
+                title: "The Honeymoon",
+                url: "https://drive.google.com/file/d/1bI-_CYBnpt-YPl7H_grFBmbW0dWySjY-/preview"
+              },
+              "7": {
+                title: "Deep End",
+                url: "https://drive.google.com/file/d/1w1qciwc9jBYsvqZPnTlGZ0wDRzamZryz/preview"
+              },
+              "8": {
+                title: "Forever",
+                url: "https://drive.google.com/file/d/1y1Z6t8oZwQ9UyLRQpl3A9upwOAKXSnio/preview"
               }
             }
           }
@@ -1159,6 +1198,26 @@
               "4": {
                 title: "Episode 4",
                 url: "https://drive.google.com/file/d/1G2vK92F1IiXrBfV2_aYi7LCzrIQnAjR_/preview"
+              },
+              "5": {
+                title: "Episode 5",
+                url: "https://drive.google.com/file/d/1wrmyohdYxt6e_86yjy4WehNf9gJs0f0r/preview"
+              },
+              "7": {
+                title: "Episode 7",
+                url: "https://drive.google.com/file/d/1kBUxyO5S7ptop7uv9ASk90rVmDV52Zv2/preview"
+              },
+              "8": {
+                title: "Episode 8",
+                url: "https://drive.google.com/file/d/1WTKHQLbrkQ5Y3g-n2J6DYbMBxJGnqyfB/preview"
+              },
+              "9": {
+                title: "Episode 9",
+                url: "https://drive.google.com/file/d/1uX_lIKDtwgx_kh8w8kS1eytKwWVKSa0P/preview"
+              },
+              "10": {
+                title: "Episode 10",
+                url: "https://drive.google.com/file/d/1eszw9iAxz5O44KqyKNy75UopMahLKq7W/preview"
               }
             }
           }
@@ -1173,7 +1232,27 @@
             episodes: {
               "1": {
                 title: "Queen to Be",
-                url: "https://drive.google.com/file/d/1examplelink17/preview"
+                url: "https://drive.google.com/file/d/1ksucPLc15paA3fLEE6WCwiIrFVq3_bqd/preview"
+              },
+              "2": {
+                title: "Honey and the Bear",
+                url: "https://drive.google.com/file/d/1bW9gBQmxKktKZTO8oPeviSsRTNfq3YFw/preview"
+              },
+              "3": {
+                title: "Even Days",
+                url: "https://drive.google.com/file/d/14fiZI1VEi48-cJxblxFEfT2pLTGEIg9I/preview"
+              },
+              "4": {
+                title: "Holding the King",
+                url: "https://drive.google.com/file/d/15LlF9PdgsLEeNzXMRcvQVdJt8Ep8DFcb/preview"
+              },
+              "5": {
+                title: "Gardens in Bloom",
+                url: "https://drive.google.com/file/d/184TLIv6MolVpX_K5pSIxWz1rpBfbJ-zH/preview"
+              },
+              "6": {
+                title: "Crown Jewels",
+                url: "https://drive.google.com/file/d/1W5Y1GTmrku2nftI2U7wFNFYGPpj1VbIu/preview"
               }
             }
           }
@@ -1361,6 +1440,10 @@
               "4": {
                 title: "Episode 4",
                 url: "https://drive.google.com/file/d/1_7w0ngVSQHxJ0uU5w5T41lJu4wFMpj9S/preview"
+              },
+              "5": {
+                title: "Episode 5",
+                url: "https://drive.google.com/file/d/1GHSVuQEWGmYVqZDI2wpMmKJLu-N7RGek/preview"
               }
             }
           }
@@ -1451,6 +1534,177 @@
               "1": {
                 title: "Episode 1",
                 url: "https://drive.google.com/file/d/12rzPogIySsXxLowlOauG7trNfrmuqJ-z/preview"
+              }
+            }
+          }
+        }
+      },
+      "buccaneers": {
+        title: "The Buccaneers",
+        poster: "https://m.media-amazon.com/images/M/MV5BNmQ5YjI0YzYtYzU3Zi00YzU1LWI1YzQtYzYwY2Y0YzU0YzUwXkEyXkFqcGc@._V1_.jpg",
+        description: "A group of fun-loving young American girls explode into 1870s London high society, kicking off an Anglo-American culture clash as the land of the stiff upper lip is infiltrated by a refreshing disregard for centuries of tradition.",
+        seasons: {
+          "1": {
+            episodes: {
+              "1": {
+                title: "American Poison",
+                url: "https://drive.google.com/file/d/100AGe6HKJII9PJm2Oun9FoW0pmOSyeQ2/preview"
+              },
+              "2": {
+                title: "Women or Wives",
+                url: "https://drive.google.com/file/d/1LXVi25zKnuwPusJNYfkysVMv-gLWKo2L/preview"
+              },
+              "3": {
+                title: "The Perfect Duchess",
+                url: "https://drive.google.com/file/d/1tFdTd-tPcW_XDIzBzI6Id8dX-xf5qv9K/preview"
+              },
+              "4": {
+                title: "Homecoming",
+                url: "https://drive.google.com/file/d/1jLkGyoTJImMByGJGaQIeJB1_M-IlSkAt/preview"
+              },
+              "5": {
+                title: "Failed Betrayal",
+                url: "https://drive.google.com/file/d/1KmvL4vqY1LfBlQZBmz85wRFnMn7Fb-NG/preview"
+              },
+              "6": {
+                title: "It's Christmas",
+                url: "https://drive.google.com/file/d/1NcQ4Iok4g-az9Y-_gv3EAZ73QeSLNLII/preview"
+              },
+              "7": {
+                title: "First Footing",
+                url: "https://drive.google.com/file/d/18_lEI8RBJOSinFXCHNyvLBcejSEbJnc2/preview"
+              },
+              "8": {
+                title: "Wedding of the Season",
+                url: "https://drive.google.com/file/d/1BKJrvNLYgYcsoPLd-oKA5TNjorRA4Ju0/preview"
+              }
+            }
+          },
+          "2": {
+            episodes: {
+              "1": {
+                title: "Episode 1",
+                url: "https://drive.google.com/file/d/1OOIyPifXDlfaJP3C5RQW0iuHKsO7g47s/preview"
+              }
+            }
+          }
+        }
+      },
+      "boarders": {
+        title: "Boarders",
+        poster: "https://m.media-amazon.com/images/M/MV5BZTY0YzQ0YjQtYzM0Yy00YzY1LTk0YzQtYzM0YzAwYzQwYzQwXkEyXkFqcGc@._V1_.jpg",
+        description: "Five talented Black inner-city teenagers are given scholarships to attend the prestigious St. Gilbert's boarding school.",
+        seasons: {
+          "1": {
+            episodes: {
+              "1": {
+                title: "Episode 1",
+                url: "https://drive.google.com/file/d/1examplelink29/preview"
+              }
+            }
+          }
+        }
+      },
+      "fallout": {
+        title: "Fallout",
+        poster: "https://m.media-amazon.com/images/M/MV5BODkxODg5ZGQtYzVkYS00NzI4LTg5YjQtYzVkYzFmY2U0YzFmXkEyXkFqcGc@._V1_.jpg",
+        description: "In a future, post-apocalyptic Los Angeles brought about by nuclear decimation, citizens must live in underground bunkers to protect themselves from radiation, mutants and bandits.",
+        seasons: {
+          "1": {
+            episodes: {
+              "1": {
+                title: "Episode 1",
+                url: "https://drive.google.com/file/d/1examplelink30/preview"
+              }
+            }
+          }
+        }
+      },
+      "from": {
+        title: "From",
+        poster: "https://m.media-amazon.com/images/M/MV5BZjA5ZTY5YzYtMjQ0Zi00YzVlLThhYjQtODBjYzQ0YzU0YzUwXkEyXkFqcGc@._V1_.jpg",
+        description: "Unravel the mystery of a nightmarish town in middle America that traps all those who enter.",
+        seasons: {
+          "1": {
+            episodes: {
+              "1": {
+                title: "Episode 1",
+                url: "https://drive.google.com/file/d/1examplelink31/preview"
+              }
+            }
+          }
+        }
+      },
+      "howtogetawaywithmurder": {
+        title: "How to Get Away with Murder",
+        poster: "https://m.media-amazon.com/images/M/MV5BNmQ5YjI0YzYtYzU3Zi00YzU1LWI1YzQtYzYwY2Y0YzU0YzUwXkEyXkFqcGc@._V1_.jpg",
+        description: "A group of ambitious law students and their brilliant criminal defense professor become involved in a twisted murder plot that promises to change the course of their lives.",
+        seasons: {
+          "1": {
+            episodes: {
+              "1": {
+                title: "Pilot",
+                url: "https://drive.google.com/file/d/1examplelink32/preview"
+              }
+            }
+          }
+        }
+      },
+      "snowfall": {
+        title: "Snowfall",
+        poster: "https://m.media-amazon.com/images/M/MV5BNDQ4YTU4OWEtY2U0Mi00ZGQwLWIyYTMtZjQwMDkzYjUwOWNmXkEyXkFqcGc@._V1_.jpg",
+        description: "A look at the early days of the crack cocaine epidemic in Los Angeles during the beginning of the 1980s.",
+        seasons: {
+          "1": {
+            episodes: {
+              "1": {
+                title: "Pilot",
+                url: "https://drive.google.com/file/d/1examplelink33/preview"
+              }
+            }
+          }
+        }
+      },
+      "bigcigar": {
+        title: "The Big Cigar",
+        poster: "https://m.media-amazon.com/images/M/MV5BNmQ5YjI0YzYtYzU3Zi00YzU1LWI1YzQtYzYwY2Y0YzU0YzUwXkEyXkFqcGc@._V1_.jpg",
+        description: "The incredible true story of Black Panther leader Huey P. Newton's escape to Cuba.",
+        seasons: {
+          "1": {
+            episodes: {
+              "1": {
+                title: "Episode 1",
+                url: "https://drive.google.com/file/d/14l43nh6Ngm3gv-p8toylqxLjVMlB071o/preview"
+              }
+            }
+          }
+        }
+      },
+      "kingsofjohannesburg": {
+        title: "Kings of Joburg",
+        poster: "https://m.media-amazon.com/images/M/MV5BNDQ4YTU4OWEtY2U0Mi00ZGQwLWIyYTMtZjQwMDkzYjUwOWNmXkEyXkFqcGc@._V1_.jpg",
+        description: "After the death of Johannesburg's crime kingpin, his brother must take over the family business while keeping his sons from killing each other.",
+        seasons: {
+          "1": {
+            episodes: {
+              "1": {
+                title: "Episode 1",
+                url: "https://drive.google.com/file/d/1examplelink34/preview"
+              }
+            }
+          }
+        }
+      },
+      "topboy": {
+        title: "Top Boy",
+        poster: "https://m.media-amazon.com/images/M/MV5BNmQ5YjI0YzYtYzU3Zi00YzU1LWI1YzQtYzYwY2Y0YzU0YzUwXkEyXkFqcGc@._V1_.jpg",
+        description: "Two London drug dealers ply their lucrative trade at a public housing estate in East London.",
+        seasons: {
+          "1": {
+            episodes: {
+              "1": {
+                title: "Episode 1",
+                url: "https://drive.google.com/file/d/1examplelink35/preview"
               }
             }
           }
@@ -1748,7 +2002,7 @@
         year: "2025", 
         url: "https://drive.google.com/file/d/16s3wgjAcgpk62Mko70fC3kpk3U3hg5jT/preview", 
         type: "movie",
-        thumbnail: "https://m.media-amazon.com/images/M/MV5BY2UwOGUxMzEtMzEyZi00NjEwLTkxOTMtYTljOWEzYjYyMWNjXkEyXkFqcGc@._V1_.jpg"
+        thumbnail: "https://m.media-amazon.com/images/M/MV5BYzM4Mzk1YjctMWFkYi00ZDdkLTk2MmQtMmExZDNlNGEyMjBjXkEyXkFqcGc@._V1_.jpg"
       },
       { 
         title: "Opus", 
@@ -2051,6 +2305,154 @@
         type: "movie",
         thumbnail: "https://upload.wikimedia.org/wikipedia/en/0/0f/Belle_poster.jpg"
       },
+      // Newly added movies
+      { 
+        title: "Billion Dollar Bluff", 
+        year: "2024", 
+        url: "https://drive.google.com/file/d/1Y6NDdTzJoyEqXxzKr9n7CmVtTEqySCgG/preview", 
+        type: "movie",
+        thumbnail: "https://via.placeholder.com/300x450?text=Billion+Dollar+Bluff"
+      },
+      { 
+        title: "Coyote Ugly", 
+        year: "2000", 
+        url: "https://drive.google.com/file/d/1KoyikROiNMLe0wI_AJy_qquVDKHXs5rG/preview", 
+        type: "movie",
+        thumbnail: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Coyote_Ugly_poster.jpg/220px-Coyote_Ugly_poster.jpg"
+      },
+      { 
+        title: "Gabriel Fluffy Iglesias: One Show Fits All", 
+        year: "2019", 
+        url: "https://drive.google.com/file/d/1V6x2-dr7kHLh99RuHgDjlM9311HGXM1S/preview", 
+        type: "movie",
+        thumbnail: "https://m.media-amazon.com/images/M/MV5BMjE1MTI4MjY4M15BMl5BanBnXkFtZTgwNjE0MTQ3NzM@._V1_.jpg"
+      },
+      { 
+        title: "Hip Hop and the White House", 
+        year: "2024", 
+        url: "https://drive.google.com/file/d/1lxApK8OiM5-WjKW-rBmDL5YYfP96reMv/preview", 
+        type: "movie",
+        thumbnail: "https://via.placeholder.com/300x450?text=Hip+Hop+and+the+White+House"
+      },
+      { 
+        title: "Icahn: The Restless Billionaire", 
+        year: "2022", 
+        url: "https://drive.google.com/file/d/15xhKYcwHzENfnvf_cH6_Xv-xPL2XnFKy/preview", 
+        type: "movie",
+        thumbnail: "https://m.media-amazon.com/images/M/MV5BNDQ4YTU4OWEtY2U0Mi00ZGQwLWIyYTMtZjQwMDkzYjUwOWNmXkEyXkFqcGc@._V1_.jpg"
+      },
+      { 
+        title: "Love Jones", 
+        year: "1997", 
+        url: "https://drive.google.com/file/d/17yV1767G8olX3RbG6DykEBFlh7HcC9Z0/preview", 
+        type: "movie",
+        thumbnail: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Love_Jones_poster.jpg/220px-Love_Jones_poster.jpg"
+      },
+      { 
+        title: "Mr. Crocket", 
+        year: "2024", 
+        url: "https://drive.google.com/file/d/1BBlvFvE-RWlPVCtR8gtMpwV2k4m1GaGx/preview", 
+        type: "movie",
+        thumbnail: "https://via.placeholder.com/300x450?text=Mr.+Crocket"
+      },
+      { 
+        title: "The Front Room", 
+        year: "2024", 
+        url: "https://drive.google.com/file/d/1oswPTEM6xIX0MZoQ_mIe2dPUZcW4x71R/preview", 
+        type: "movie",
+        thumbnail: "https://m.media-amazon.com/images/M/MV5BNmQ5YjI0YzYtYzU3Zi00YzU1LWI1YzQtYzYwY2Y0YzU0YzUwXkEyXkFqcGc@._V1_.jpg"
+      },
+      { 
+        title: "The Supremes at Earl's All-You-Can-Eat", 
+        year: "2024", 
+        url: "https://drive.google.com/file/d/1UIAMkTl3pKN18la7RD_JI24p0EwRUJuD/preview", 
+        type: "movie",
+        thumbnail: "https://via.placeholder.com/300x450?text=The+Supremes+at+Earl's+All-You-Can-Eat"
+      },
+      { 
+        title: "K.O.2025", 
+        year: "2025", 
+        url: "https://drive.google.com/file/d/1NFRJzjRUINBQbJp0fn2KooJoY14fRgSt/preview", 
+        type: "movie",
+        thumbnail: "https://via.placeholder.com/300x450?text=K.O.2025"
+      },
+      { 
+        title: "Black Tea", 
+        year: "2024", 
+        url: "https://drive.google.com/file/d/1Eo5gfettsOgq5pwcXqftlfbXaUZoCPt7/preview", 
+        type: "movie",
+        thumbnail: "https://m.media-amazon.com/images/M/MV5BNmQ5YjI0YzYtYzU3Zi00YzU1LWI1YzQtYzYwY2Y0YzU0YzUwXkEyXkFqcGc@._V1_.jpg"
+      },
+      { 
+        title: "Blade", 
+        year: "1998", 
+        url: "https://drive.google.com/file/d/1S-WCetCH-M8LxLPKcI4cJo-OB28SPRG7/preview", 
+        type: "movie",
+        thumbnail: "https://upload.wikimedia.org/wikipedia/en/thumb/3/3f/Blade_movie.jpg/220px-Blade_movie.jpg"
+      },
+      { 
+        title: "Blue Lagoon", 
+        year: "1980", 
+        url: "https://drive.google.com/file/d/1adIqg3a_-0N6ud0lACqtiLKtRk-Vf2Q9/preview", 
+        type: "movie",
+        thumbnail: "https://upload.wikimedia.org/wikipedia/en/thumb/5/5c/Blue_Lagoon_1980_film_poster.jpg/220px-Blue_Lagoon_1980_film_poster.jpg"
+      },
+      { 
+        title: "California King", 
+        year: "2025", 
+        url: "https://drive.google.com/file/d/1sjVrJQ9U2EurmO6K-edSS-56aqXfLQVw/preview", 
+        type: "movie",
+        thumbnail: "https://via.placeholder.com/300x450?text=California+King"
+      },
+      { 
+        title: "Foxy Brown", 
+        year: "1974", 
+        url: "https://drive.google.com/file/d/1CFvOH3LpuwXp87OKS_xH2TP2s4YA3Cw-/preview", 
+        type: "movie",
+        thumbnail: "https://upload.wikimedia.org/wikipedia/en/thumb/3/3e/Foxy_Brown_poster.jpg/220px-Foxy_Brown_poster.jpg"
+      },
+      { 
+        title: "Invictus", 
+        year: "2009", 
+        url: "https://drive.google.com/file/d/1QYsBqvlZlFrIIPgo9QWM43t5JmAuO1qV/preview", 
+        type: "movie",
+        thumbnail: "https://upload.wikimedia.org/wikipedia/en/thumb/1/13/Invictus_poster.jpg/220px-Invictus_poster.jpg"
+      },
+      { 
+        title: "Malcolm X", 
+        year: "1992", 
+        url: "https://drive.google.com/file/d/1cIMedG8r-34p7eAVtIv-tgCDpriW-y6j/preview", 
+        type: "movie",
+        thumbnail: "https://upload.wikimedia.org/wikipedia/en/thumb/5/5e/Malcolm_X_poster.jpg/220px-Malcolm_X_poster.jpg"
+      },
+      { 
+        title: "Origin", 
+        year: "2023", 
+        url: "https://drive.google.com/file/d/17P_ugyI1B0rg-FHl2WhIGcGnhDLPNIX4/preview", 
+        type: "movie",
+        thumbnail: "https://upload.wikimedia.org/wikipedia/en/thumb/1/1d/Origin_%28film%29.jpg/220px-Origin_%28film%29.jpg"
+      },
+      { 
+        title: "Soul", 
+        year: "2020", 
+        url: "https://drive.google.com/file/d/1PcuzkmzNTGnQsBpg8DrOigDlz33tPN7F/preview", 
+        type: "movie",
+        thumbnail: "https://upload.wikimedia.org/wikipedia/en/thumb/3/39/Soul_%282020_film%29_poster.jpg/220px-Soul_%282020_film%29_poster.jpg"
+      },
+      { 
+        title: "Straw", 
+        year: "2025", 
+        url: "https://drive.google.com/file/d/1dgCuK_AJkAPg0KMqeYPFwZCU97CNYPUJ/preview", 
+        type: "movie",
+        thumbnail: "https://via.placeholder.com/300x450?text=Straw.2025"
+      },
+      { 
+        title: "The Autobiography of Miss Jane Pittman", 
+        year: "1974", 
+        url: "https://drive.google.com/file/d/1RQJmL3ku3Sjn2PNY1IblQOODwhMHuRkv/preview", 
+        type: "movie",
+        thumbnail: "https://upload.wikimedia.org/wikipedia/en/thumb/1/1f/The_Autobiography_of_Miss_Jane_Pittman_poster.jpg/220px-The_Autobiography_of_Miss_Jane_Pittman_poster.jpg"
+      },
       
       // TV Series
       { 
@@ -2249,7 +2651,7 @@
       const start = (page - 1) * moviesPerPage;
       const end = start + moviesPerPage;
       const moviesToShow = contentDatabase
-        .filter(item => item.type === 'movie')
+        .filter(item => item.type === 'movie' && !item.url.includes('youtube.com'))
         .slice(start, end);
       
       moviesToShow.forEach(movie => {
@@ -2272,7 +2674,7 @@
     }
 
     function updatePagination() {
-      const totalMovies = contentDatabase.filter(item => item.type === 'movie').length;
+      const totalMovies = contentDatabase.filter(item => item.type === 'movie' && !item.url.includes('youtube.com')).length;
       const totalPages = Math.ceil(totalMovies / moviesPerPage);
       
       paginationContainer.innerHTML = '';
@@ -2344,12 +2746,14 @@
     // All videos function
     function showAllVideos() {
       const allVideosSection = document.getElementById('allVideosSection');
+      const allSeriesSection = document.getElementById('allSeriesSection');
       const allVideosContainer = document.getElementById('allVideosContainer');
       
       // Hide other sections
       document.querySelectorAll('.section').forEach(section => {
         section.style.display = 'none';
       });
+      allSeriesSection.style.display = 'none';
       
       // Show all videos section
       allVideosSection.style.display = 'block';
@@ -2358,31 +2762,138 @@
       allVideosContainer.innerHTML = '';
       
       // Filter only movies (exclude series if needed)
+      const moviesOnly = contentDatabase
+            // Filter only movies (exclude series if needed)
       const moviesOnly = contentDatabase.filter(item => item.type === 'movie');
       
-      // Sort A-Z and create video items
-      moviesOnly.sort((a,b) => a.title.localeCompare(b.title))
-        .forEach(video => {
-          const videoItem = document.createElement('div');
-          videoItem.className = 'all-videos-item';
-          
-          videoItem.innerHTML = `
-            <div class="thumbnail-container" style="height: 250px;">
-              <img src="${video.thumbnail}" alt="${video.title}" 
-                   onerror="this.src='https://via.placeholder.com/300x450?text=No+Thumbnail'">
-              <div class="play-button"></div>
-            </div>
-            <div class="movie-title">${video.title} ${video.year ? `(${video.year})` : ''}</div>
-          `;
-          
-          videoItem.onclick = () => openModal(video.url, `${video.title} ${video.year ? `(${video.year})` : ''}`);
-          allVideosContainer.appendChild(videoItem);
-        });
+      // Sort alphabetically
+      moviesOnly.sort((a, b) => a.title.localeCompare(b.title));
+      
+      // Display all movies
+      moviesOnly.forEach(movie => {
+        const movieItem = document.createElement('div');
+        movieItem.className = 'all-videos-item';
+        movieItem.innerHTML = `
+          <div class="thumbnail-container" style="height: 250px;">
+            <img src="${movie.thumbnail}" alt="${movie.title}" 
+                 onerror="this.src='https://via.placeholder.com/300x450?text=No+Thumbnail'">
+            <div class="play-button"></div>
+          </div>
+          <div class="movie-title">${movie.title} ${movie.year ? `(${movie.year})` : ''}</div>
+        `;
+        movieItem.onclick = () => openModal(movie.url, `${movie.title} ${movie.year ? `(${movie.year})` : ''}`);
+        allVideosContainer.appendChild(movieItem);
+      });
     }
 
-    // Initialize movies and series display
-    displayMovies(currentPage);
-    displaySeries(currentSeriesPage);
+    // All series function
+    function showAllSeries() {
+      const allVideosSection = document.getElementById('allVideosSection');
+      const allSeriesSection = document.getElementById('allSeriesSection');
+      const allSeriesContainer = document.getElementById('allSeriesContainer');
+      
+      // Hide other sections
+      document.querySelectorAll('.section').forEach(section => {
+        section.style.display = 'none';
+      });
+      allVideosSection.style.display = 'none';
+      
+      // Show all series section
+      allSeriesSection.style.display = 'block';
+      
+      // Clear previous results
+      allSeriesContainer.innerHTML = '';
+      
+      // Get all series from both databases
+      const allSeries = [];
+      
+      // Add series from seriesDatabase
+      for (const seriesId in seriesDatabase) {
+        allSeries.push({
+          id: seriesId,
+          title: seriesDatabase[seriesId].title,
+          poster: seriesDatabase[seriesId].poster,
+          type: 'series'
+        });
+      }
+      
+      // Add series from contentDatabase
+      contentDatabase.forEach(item => {
+        if (item.type === 'series') {
+          allSeries.push({
+            id: item.title.toLowerCase().replace(/\s+/g, '-'),
+            title: item.title,
+            poster: item.thumbnail,
+            type: 'series'
+          });
+        }
+      });
+      
+      // Sort alphabetically
+      allSeries.sort((a, b) => a.title.localeCompare(b.title));
+      
+      // Display all series
+      allSeries.forEach(series => {
+        const seriesItem = document.createElement('div');
+        seriesItem.className = 'all-videos-item';
+        seriesItem.innerHTML = `
+          <div class="thumbnail-container" style="height: 250px;">
+            <img src="${series.poster}" alt="${series.title}" 
+                 onerror="this.src='https://via.placeholder.com/300x450?text=No+Thumbnail'">
+            <div class="play-button"></div>
+          </div>
+          <div class="movie-title">${series.title}</div>
+        `;
+        
+        if (seriesDatabase[series.id]) {
+          seriesItem.onclick = (e) => showSeasons(series.id, e);
+        } else {
+          seriesItem.onclick = () => window.open(series.url, '_blank');
+        }
+        
+        allSeriesContainer.appendChild(seriesItem);
+      });
+    }
+
+    // Initialize the page
+    document.addEventListener('DOMContentLoaded', function() {
+      displayMovies(currentPage);
+      displaySeries(currentSeriesPage);
+      
+      // Set up event listeners for "Show All" buttons
+      document.querySelectorAll('.watch-now').forEach(button => {
+        if (button.textContent.includes('Show All Movies')) {
+          button.addEventListener('click', showAllVideos);
+        } else if (button.textContent.includes('Show All Series')) {
+          button.addEventListener('click', showAllSeries);
+        }
+      });
+      
+      // Set up back button functionality (if needed)
+      window.addEventListener('popstate', function(event) {
+        if (event.state && event.state.section === 'allVideos') {
+          showAllVideos();
+        } else if (event.state && event.state.section === 'allSeries') {
+          showAllSeries();
+        } else {
+          document.querySelectorAll('.section').forEach(section => {
+            section.style.display = 'block';
+          });
+          document.getElementById('allVideosSection').style.display = 'none';
+          document.getElementById('allSeriesSection').style.display = 'none';
+        }
+      });
+    });
+
+    // Back to home function (if you want to add a back button)
+    function backToHome() {
+      document.querySelectorAll('.section').forEach(section => {
+        section.style.display = 'block';
+      });
+      document.getElementById('allVideosSection').style.display = 'none';
+      document.getElementById('allSeriesSection').style.display = 'none';
+      window.scrollTo(0, 0);
+    }
   </script>
 </body>
 </html>
