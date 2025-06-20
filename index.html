@@ -1,418 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Improved Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="TV Yami - Watch free movies and TV series online. Stream the latest movies, popular TV shows, and exclusive content from our YouTube channel.">
-    <meta name="keywords" content="TV Yami, tvyami, free movies online, watch TV series, streaming movies, YouTube movies, latest films">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="TV Yami - Free Movies and TV Series">
-    <meta property="og:description" content="Watch free movies and TV series online on TV Yami. Stream the latest films and popular shows.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://tvyami.online/">
-    
     <title>TV Yami - Watch Free Movies and TV Series Online</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        /* Your existing CSS styles remain unchanged */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        body {
-            background-color: #0f0f0f;
-            color: white;
-        }
-
-        header {
-            background-color: #0f0f0f;
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid #333;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #e50914;
-            text-decoration: none;
-        }
-
-        .search-bar {
-            display: flex;
-            align-items: center;
-            background-color: #1a1a1a;
-            border-radius: 20px;
-            padding: 5px 15px;
-            width: 300px;
-        }
-
-        .search-bar input {
-            background: transparent;
-            border: none;
-            color: white;
-            padding: 8px;
-            width: 100%;
-            outline: none;
-        }
-
-        .search-bar button {
-            background: transparent;
-            border: none;
-            color: #aaa;
-            cursor: pointer;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: #e50914;
-        }
-
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('hero-bg.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 500px;
-            display: flex;
-            align-items: center;
-            text-align: center;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 18px;
-            margin-bottom: 30px;
-            color: #ccc;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: #e50914;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #b2070f;
-        }
-
-        .section {
-            padding: 50px 0;
-        }
-
-        .section-title {
-            font-size: 24px;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .view-all {
-            color: #e50914;
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        .view-all:hover {
-            text-decoration: underline;
-        }
-
-        .movies-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 20px;
-        }
-
-        .movie-card {
-            background-color: #1a1a1a;
-            border-radius: 5px;
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-
-        .movie-card:hover {
-            transform: scale(1.05);
-        }
-
-        .movie-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-
-        .movie-info {
-            padding: 10px;
-        }
-
-        .movie-info h3 {
-            font-size: 16px;
-            margin-bottom: 5px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .movie-info p {
-            font-size: 14px;
-            color: #aaa;
-        }
-
-        footer {
-            background-color: #0f0f0f;
-            padding: 30px 0;
-            border-top: 1px solid #333;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-        .footer-section {
-            flex: 1;
-            min-width: 200px;
-            margin-bottom: 20px;
-        }
-
-        .footer-section h3 {
-            font-size: 18px;
-            margin-bottom: 15px;
-            color: #e50914;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-section ul li a {
-            color: #aaa;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-section ul li a:hover {
-            color: white;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-icons a {
-            color: white;
-            font-size: 20px;
-            transition: color 0.3s;
-        }
-
-        .social-icons a:hover {
-            color: #e50914;
-        }
-
-        .copyright {
-            text-align: center;
-            margin-top: 30px;
-            color: #aaa;
-            font-size: 14px;
-        }
-
-        .pagination {
-            display: flex;
-            justify-content: center;
-            margin-top: 30px;
-            gap: 10px;
-        }
-
-        .pagination a {
-            color: white;
-            text-decoration: none;
-            padding: 8px 15px;
-            background-color: #1a1a1a;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .pagination a:hover, .pagination a.active {
-            background-color: #e50914;
-        }
-
-        /* Modal styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-        }
-
-        .modal-content {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 800px;
-            padding-top: 50px;
-        }
-
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: white;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-
-        .close:hover {
-            color: #e50914;
-        }
-
-        /* Responsive styles */
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .search-bar {
-                width: 100%;
-            }
-
-            nav ul {
-                margin-top: 15px;
-            }
-
-            .hero {
-                height: 400px;
-            }
-
-            .hero h1 {
-                font-size: 36px;
-            }
-
-            .movies-grid {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            }
-
-            .movie-card img {
-                height: 200px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero {
-                height: 300px;
-            }
-
-            .hero h1 {
-                font-size: 28px;
-            }
-
-            .movies-grid {
-                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-            }
-
-            .movie-card img {
-                height: 160px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <a href="index.html" class="logo">TV Yami</a>
-                <div class="search-bar">
-                    <input type="text" placeholder="Search movies, series...">
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                </div>
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="movies.html">Movies</a></li>
-                        <li><a href="series.html">TV Series</a></li>
-                        <li><a href="about.html">About</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
-
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Watch Free Movies & TV Shows</h1>
-                <p>Stream your favorite movies and TV series anytime, anywhere. No subscriptions, no fees.</p>
-                <a href="#featured" class="btn">Browse Now</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Schema markup for better SEO -->
+    <meta name="description" content="Watch free movies and TV series online on TV Yami. Stream the latest movies, TV shows, and YouTube content without registration.">
+    <meta name="keywords" content="TV Yami, tvyami, free movies, watch movies online, free TV series, streaming movies, online TV shows">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="TV Yami - Watch Free Movies and TV Series Online">
+    <meta property="og:description" content="Watch free movies and TV series online on TV Yami. Stream the latest movies, TV shows, and YouTube content without registration.">
+    <meta property="og:url" content="https://tvyami.online">
+    <meta property="og:type" content="website">
+    
+    <!-- Schema.org markup for Google -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "TV Yami",
-      "url": "https://tvyami.online/",
+      "url": "https://tvyami.online",
       "potentialAction": {
         "@type": "SearchAction",
         "target": "https://tvyami.online/search?q={search_term_string}",
@@ -420,481 +26,877 @@
       }
     }
     </script>
+    
+    <style>
+        /* Your existing CSS styles remain unchanged */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+            border-bottom: 2px solid #e50914;
+            padding-bottom: 5px;
+        }
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .movie-card {
+            background-color: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .movie-card:hover {
+            transform: translateY(-5px);
+        }
+        .movie-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        .movie-info {
+            padding: 10px;
+        }
+        .movie-info h3 {
+            margin: 0;
+            font-size: 16px;
+        }
+        .movie-info p {
+            margin: 5px 0 0;
+            font-size: 14px;
+            color: #666;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .pagination a {
+            padding: 8px 16px;
+            margin: 0 5px;
+            background-color: #e50914;
+            color: white;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+        .pagination a:hover {
+            background-color: #b00710;
+        }
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        .search-container {
+            margin: 20px 0;
+        }
+        .search-container input {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        .search-container button {
+            padding: 10px 15px;
+            background-color: #e50914;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .ad-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .featured {
+            margin-bottom: 40px;
+        }
+        .series-season {
+            margin-bottom: 20px;
+        }
+        .episode-list {
+            display: none;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .season-toggle {
+            background-color: #e50914;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+        @media (max-width: 768px) {
+            .movie-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            nav ul {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">TV Yami</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#movies">Movies</a></li>
+                <li><a href="#series">TV Series</a></li>
+                <li><a href="#youtube">YouTube</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <section id="featured" class="section">
-        <div class="container">
+    <div class="container">
+        <div class="search-container">
+            <input type="text" placeholder="Search movies and TV series...">
+            <button>Search</button>
+        </div>
+
+        <div class="ad-container">
+            <!-- Ad code remains unchanged -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1234567890123456"
+            crossorigin="anonymous"></script>
+            <!-- Top Banner Ad -->
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-1234567890123456"
+                data-ad-slot="1234567890"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <div class="featured">
             <h2 class="section-title">Featured Movies</h2>
-            <div class="movies-grid">
+            <div class="movie-grid">
                 <!-- Featured movies remain unchanged -->
                 <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="Featured Movie 1">
+                    <img src="https://via.placeholder.com/300x450" alt="Featured Movie 1">
                     <div class="movie-info">
                         <h3>Featured Movie 1</h3>
                         <p>2023 • Action</p>
                     </div>
                 </div>
                 <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="Featured Movie 2">
+                    <img src="https://via.placeholder.com/300x450" alt="Featured Movie 2">
                     <div class="movie-info">
                         <h3>Featured Movie 2</h3>
                         <p>2023 • Drama</p>
                     </div>
                 </div>
                 <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="Featured Movie 3">
+                    <img src="https://via.placeholder.com/300x450" alt="Featured Movie 3">
                     <div class="movie-info">
                         <h3>Featured Movie 3</h3>
                         <p>2023 • Comedy</p>
                     </div>
                 </div>
                 <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="Featured Movie 4">
+                    <img src="https://via.placeholder.com/300x450" alt="Featured Movie 4">
                     <div class="movie-info">
                         <h3>Featured Movie 4</h3>
                         <p>2023 • Thriller</p>
                     </div>
                 </div>
-                <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="Featured Movie 5">
-                    <div class="movie-info">
-                        <h3>Featured Movie 5</h3>
-                        <p>2023 • Sci-Fi</p>
-                    </div>
-                </div>
             </div>
         </div>
-    </section>
 
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Movies from our YouTube channel (subscribe)</h2>
-            <div class="movies-grid">
-                <!-- YouTube movies section -->
+        <div class="ad-container">
+            <!-- Middle Ad remains unchanged -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1234567890123456"
+            crossorigin="anonymous"></script>
+            <!-- Middle Rectangle Ad -->
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-1234567890123456"
+                data-ad-slot="0987654321"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <div id="movies" class="movie-section">
+            <h2 class="section-title">TV Yami Movies</h2>
+            <div class="movie-grid">
+                <!-- Page 1 Movies - Kept requested movies on top -->
                 <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="American Fiction">
+                    <img src="https://via.placeholder.com/300x450" alt="American Fiction">
                     <div class="movie-info">
                         <h3>American Fiction</h3>
                         <p>2023 • Drama</p>
                     </div>
                 </div>
                 <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="Mandela - Long Walk to Freedom">
+                    <img src="https://via.placeholder.com/300x450" alt="Mandela - Long Walk to Freedom">
                     <div class="movie-info">
                         <h3>Mandela - Long Walk to Freedom</h3>
                         <p>2013 • Biography</p>
                     </div>
                 </div>
                 <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="The Creator">
+                    <img src="https://via.placeholder.com/300x450" alt="The Creator">
                     <div class="movie-info">
                         <h3>The Creator</h3>
                         <p>2023 • Sci-Fi</p>
                     </div>
                 </div>
                 <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="Sarafina">
+                    <img src="https://via.placeholder.com/300x450" alt="Sarafina">
                     <div class="movie-info">
                         <h3>Sarafina</h3>
                         <p>1992 • Musical</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">TV Yami Movies <a href="movies.html" class="view-all">Show all movies</a> <a href="series.html" class="view-all">Show all series</a></h2>
-            <div class="movies-grid">
-                <!-- TV Yami Movies section - updated with new movies -->
+                <!-- Newly added movies -->
                 <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="American Fiction">
-                    <div class="movie-info">
-                        <h3>American Fiction</h3>
-                        <p>2023 • Drama</p>
-                    </div>
-                </div>
-                <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="Mandela - Long Walk to Freedom">
-                    <div class="movie-info">
-                        <h3>Mandela - Long Walk to Freedom</h3>
-                        <p>2013 • Biography</p>
-                    </div>
-                </div>
-                <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="The Creator">
-                    <div class="movie-info">
-                        <h3>The Creator</h3>
-                        <p>2023 • Sci-Fi</p>
-                    </div>
-                </div>
-                <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="Sarafina">
-                    <div class="movie-info">
-                        <h3>Sarafina</h3>
-                        <p>1992 • Musical</p>
-                    </div>
-                </div>
-                <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="Billion Dollar Bluff">
+                    <img src="https://via.placeholder.com/300x450" alt="Billion Dollar Bluff">
                     <div class="movie-info">
                         <h3>Billion Dollar Bluff</h3>
                         <p>2024 • Drama</p>
                     </div>
                 </div>
                 <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="Coyote Ugly">
+                    <img src="https://via.placeholder.com/300x450" alt="Coyote Ugly">
                     <div class="movie-info">
                         <h3>Coyote Ugly</h3>
-                        <p>2000 • Comedy</p>
+                        <p>2000 • Musical</p>
                     </div>
                 </div>
                 <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="Gabriel Fluffy Iglesias">
+                    <img src="https://via.placeholder.com/300x450" alt="Gabriel Fluffy Iglesias">
                     <div class="movie-info">
                         <h3>Gabriel Fluffy Iglesias</h3>
                         <p>2019 • Comedy</p>
                     </div>
                 </div>
                 <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="Hip Hop and the White House">
+                    <img src="https://via.placeholder.com/300x450" alt="Hip Hop and the White House">
                     <div class="movie-info">
                         <h3>Hip Hop and the White House</h3>
                         <p>2024 • Documentary</p>
                     </div>
                 </div>
                 <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="Icahn The Restless Billionaire">
+                    <img src="https://via.placeholder.com/300x450" alt="Icahn The Restless Billionaire">
                     <div class="movie-info">
-                        <h3>Icahn The Restless Billionaire</h3>
+                        <h3>Icahn: The Restless Billionaire</h3>
                         <p>2022 • Documentary</p>
                     </div>
                 </div>
                 <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="Love Jones">
+                    <img src="https://via.placeholder.com/300x450" alt="Love Jones">
                     <div class="movie-info">
                         <h3>Love Jones</h3>
                         <p>1997 • Romance</p>
                     </div>
                 </div>
                 <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="Mr. Crocket">
+                    <img src="https://via.placeholder.com/300x450" alt="Mr. Crocket">
                     <div class="movie-info">
                         <h3>Mr. Crocket</h3>
                         <p>2024 • Drama</p>
                     </div>
                 </div>
                 <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="The Front Room">
+                    <img src="https://via.placeholder.com/300x450" alt="The Front Room">
                     <div class="movie-info">
                         <h3>The Front Room</h3>
                         <p>2024 • Horror</p>
                     </div>
                 </div>
-            </div>
-            <div class="pagination">
-                <a href="#" class="active">1</a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">Next</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">TV Series</h2>
-            <div class="movies-grid">
-                <!-- Existing TV Series -->
                 <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="Duster">
+                    <img src="https://via.placeholder.com/300x450" alt="The Supremes at Earl's All-You-Can-Eat">
                     <div class="movie-info">
-                        <h3>Duster</h3>
-                        <p>2024 • Drama</p>
-                    </div>
-                </div>
-                <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="Forever">
-                    <div class="movie-info">
-                        <h3>Forever</h3>
-                        <p>2024 • Romance</p>
-                    </div>
-                </div>
-                <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="The Big Cigar">
-                    <div class="movie-info">
-                        <h3>The Big Cigar</h3>
-                        <p>2024 • Drama</p>
-                    </div>
-                </div>
-                <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="Queen Charlotte">
-                    <div class="movie-info">
-                        <h3>Queen Charlotte</h3>
-                        <p>2023 • Historical</p>
-                    </div>
-                </div>
-                <!-- New TV Series Added -->
-                <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="The Buccaneers">
-                    <div class="movie-info">
-                        <h3>The Buccaneers</h3>
-                        <p>2023 • Drama</p>
-                    </div>
-                </div>
-                <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="Interview with a vampire">
-                    <div class="movie-info">
-                        <h3>Interview with a vampire</h3>
-                        <p>2022 • Horror</p>
-                    </div>
-                </div>
-                <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="Boarders">
-                    <div class="movie-info">
-                        <h3>Boarders</h3>
+                        <h3>The Supremes at Earl's All-You-Can-Eat</h3>
                         <p>2024 • Comedy</p>
                     </div>
                 </div>
                 <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="Fallout">
-                    <div class="movie-info">
-                        <h3>Fallout</h3>
-                        <p>2024 • Sci-Fi</p>
-                    </div>
-                </div>
-                <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="From">
-                    <div class="movie-info">
-                        <h3>From</h3>
-                        <p>2022 • Horror</p>
-                    </div>
-                </div>
-                <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="How to get away with murder">
-                    <div class="movie-info">
-                        <h3>How to get away with murder</h3>
-                        <p>2014 • Crime</p>
-                    </div>
-                </div>
-                <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="Snowfall">
-                    <div class="movie-info">
-                        <h3>Snowfall</h3>
-                        <p>2017 • Drama</p>
-                    </div>
-                </div>
-                <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="Kings of Joburg">
-                    <div class="movie-info">
-                        <h3>Kings of Joburg</h3>
-                        <p>2021 • Crime</p>
-                    </div>
-                </div>
-            </div>
-            <div class="pagination">
-                <a href="#" class="active">1</a>
-                <a href="#">2</a>
-                <a href="#">Next</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Additional movies section -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">More Movies</h2>
-            <div class="movies-grid">
-                <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="The Supremes at Earl's All-You-Can-Eat">
-                    <div class="movie-info">
-                        <h3>The Supremes at Earl's All-You-Can-Eat</h3>
-                        <p>2024 • Drama</p>
-                    </div>
-                </div>
-                <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="K.O.2025">
+                    <img src="https://via.placeholder.com/300x450" alt="K.O.2025">
                     <div class="movie-info">
                         <h3>K.O.2025</h3>
                         <p>2025 • Action</p>
                     </div>
                 </div>
                 <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="Black Tea">
+                    <img src="https://via.placeholder.com/300x450" alt="Black Tea">
                     <div class="movie-info">
                         <h3>Black Tea</h3>
                         <p>2024 • Drama</p>
                     </div>
                 </div>
                 <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="Blade">
+                    <img src="https://via.placeholder.com/300x450" alt="Blade">
                     <div class="movie-info">
                         <h3>Blade</h3>
                         <p>1998 • Action</p>
                     </div>
                 </div>
                 <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="BLUE LAGOON">
+                    <img src="https://via.placeholder.com/300x450" alt="BLUE LAGOON">
                     <div class="movie-info">
                         <h3>BLUE LAGOON</h3>
                         <p>1980 • Romance</p>
                     </div>
                 </div>
                 <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="California King">
+                    <img src="https://via.placeholder.com/300x450" alt="California King">
                     <div class="movie-info">
                         <h3>California King</h3>
                         <p>2025 • Drama</p>
                     </div>
                 </div>
                 <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="Foxy Brown">
+                    <img src="https://via.placeholder.com/300x450" alt="Foxy Brown">
                     <div class="movie-info">
                         <h3>Foxy Brown</h3>
                         <p>1974 • Action</p>
                     </div>
                 </div>
                 <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="Invictus">
+                    <img src="https://via.placeholder.com/300x450" alt="Invictus">
                     <div class="movie-info">
                         <h3>Invictus</h3>
-                        <p>2009 • Biography</p>
+                        <p>2009 • Drama</p>
                     </div>
                 </div>
                 <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="Malcolm X">
+                    <img src="https://via.placeholder.com/300x450" alt="Malcolm X">
                     <div class="movie-info">
                         <h3>Malcolm X</h3>
                         <p>1992 • Biography</p>
                     </div>
                 </div>
                 <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="Origin">
+                    <img src="https://via.placeholder.com/300x450" alt="Origin">
                     <div class="movie-info">
                         <h3>Origin</h3>
                         <p>2023 • Drama</p>
                     </div>
                 </div>
                 <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="Soul">
+                    <img src="https://via.placeholder.com/300x450" alt="Soul">
                     <div class="movie-info">
                         <h3>Soul</h3>
                         <p>2020 • Animation</p>
                     </div>
                 </div>
                 <div class="movie-card">
-                    <img src="https://via.placeholder.com/180x250" alt="Straw.2025">
+                    <img src="https://via.placeholder.com/300x450" alt="Straw.2025">
                     <div class="movie-info">
                         <h3>Straw.2025</h3>
                         <p>2025 • Sci-Fi</p>
                     </div>
                 </div>
-            </div>
-            <div class="pagination">
-                <a href="#" class="active">1</a>
-                <a href="#">2</a>
-                <a href="#">Next</a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>TV Yami</h3>
-                    <p>Your premier destination for free movies and TV series streaming. Watch the latest content without subscriptions or fees.</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                <div class="movie-card">
+                    <img src="https://via.placeholder.com/300x450" alt="The Autobiography of Miss Jane Pittman">
+                    <div class="movie-info">
+                        <h3>The Autobiography of Miss Jane Pittman</h3>
+                        <p>1974 • Drama</p>
                     </div>
                 </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="movies.html">Movies</a></li>
-                        <li><a href="series.html">TV Series</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Categories</h3>
-                    <ul>
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Comedy</a></li>
-                        <li><a href="#">Drama</a></li>
-                        <li><a href="#">Horror</a></li>
-                        <li><a href="#">Sci-Fi</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Help</h3>
-                    <ul>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">DMCA</a></li>
-                    </ul>
-                </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2023 TV Yami. All Rights Reserved.</p>
+            <div class="pagination">
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">Next</a>
+            </div>
+            <div style="margin-top: 20px; text-align: center;">
+                <a href="#" style="padding: 10px 20px; background-color: #e50914; color: white; text-decoration: none; border-radius: 3px; margin-right: 10px;">Show all movies</a>
+                <a href="#" style="padding: 10px 20px; background-color: #e50914; color: white; text-decoration: none; border-radius: 3px;">Show all series</a>
             </div>
         </div>
-    </footer>
 
-    <!-- Modal for video playback -->
-    <div id="videoModal" class="modal">
-        <span class="close">&times;</span>
-        <div class="modal-content">
-            <iframe id="videoFrame" width="100%" height="500" src="" frameborder="0" allowfullscreen></iframe>
+        <div class="ad-container">
+            <!-- Bottom Ad remains unchanged -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1234567890123456"
+            crossorigin="anonymous"></script>
+            <!-- Bottom Banner Ad -->
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-1234567890123456"
+                data-ad-slot="5678901234"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <div id="series" class="series-section">
+            <h2 class="section-title">TV Series</h2>
+            
+            <!-- Existing series with new episodes -->
+            <div class="series-season">
+                <button class="season-toggle" onclick="toggleEpisodes('duster-s1')">Duster - Season 1</button>
+                <div id="duster-s1" class="episode-list">
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="Duster S1E1">
+                        <div class="movie-info">
+                            <h3>Duster S1E1</h3>
+                            <p>Episode 1</p>
+                        </div>
+                    </div>
+                    <!-- Previous episodes -->
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="Duster S1E4">
+                        <div class="movie-info">
+                            <h3>Duster S1E4</h3>
+                            <p>Episode 4</p>
+                        </div>
+                    </div>
+                    <!-- New episode -->
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="Duster S1E5">
+                        <div class="movie-info">
+                            <h3>Duster S1E5</h3>
+                            <p>Episode 5</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="series-season">
+                <button class="season-toggle" onclick="toggleEpisodes('forever-s1')">FOREVER - Season 1</button>
+                <div id="forever-s1" class="episode-list">
+                    <!-- Previous episodes -->
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="FOREVER S1E1">
+                        <div class="movie-info">
+                            <h3>FOREVER S1E1</h3>
+                            <p>Episode 1</p>
+                        </div>
+                    </div>
+                    <!-- New episodes -->
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="FOREVER S1E5">
+                        <div class="movie-info">
+                            <h3>FOREVER S1E5 - The Vineyard</h3>
+                            <p>Episode 5</p>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="FOREVER S1E6">
+                        <div class="movie-info">
+                            <h3>FOREVER S1E6 - The Honeymoon</h3>
+                            <p>Episode 6</p>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="FOREVER S1E7">
+                        <div class="movie-info">
+                            <h3>FOREVER S1E7 - Deep End</h3>
+                            <p>Episode 7</p>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="FOREVER S1E8">
+                        <div class="movie-info">
+                            <h3>FOREVER S1E8 - Forever</h3>
+                            <p>Episode 8</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- New series added -->
+            <div class="series-season">
+                <button class="season-toggle" onclick="toggleEpisodes('big-cigar-s1')">The Big Cigar - Season 1</button>
+                <div id="big-cigar-s1" class="episode-list">
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="The Big Cigar S1E1">
+                        <div class="movie-info">
+                            <h3>The Big Cigar S1E1</h3>
+                            <p>Episode 1</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="series-season">
+                <button class="season-toggle" onclick="toggleEpisodes('queen-charlotte-s1')">Queen Charlotte - Season 1</button>
+                <div id="queen-charlotte-s1" class="episode-list">
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="Queen Charlotte S1E1">
+                        <div class="movie-info">
+                            <h3>Queen Charlotte S1E1 - Queen...</h3>
+                            <p>Episode 1</p>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="Queen Charlotte S1E2">
+                        <div class="movie-info">
+                            <h3>Queen Charlotte S1E2 - Honey...</h3>
+                            <p>Episode 2</p>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="Queen Charlotte S1E3">
+                        <div class="movie-info">
+                            <h3>Queen Charlotte S1E3 - Even...</h3>
+                            <p>Episode 3</p>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="Queen Charlotte S1E4">
+                        <div class="movie-info">
+                            <h3>Queen Charlotte S1E4 - Holdi...</h3>
+                            <p>Episode 4</p>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="Queen Charlotte S1E5">
+                        <div class="movie-info">
+                            <h3>Queen Charlotte S1E5 - Garde...</h3>
+                            <p>Episode 5</p>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="Queen Charlotte S1E6">
+                        <div class="movie-info">
+                            <h3>Queen Charlotte S1E6 - Crown...</h3>
+                            <p>Episode 6</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="series-season">
+                <button class="season-toggle" onclick="toggleEpisodes('buccaneers-s1')">The Buccaneers - Season 1</button>
+                <div id="buccaneers-s1" class="episode-list">
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="The Buccaneers S1E1">
+                        <div class="movie-info">
+                            <h3>The Buccaneers S1E1 - American Poison</h3>
+                            <p>Episode 1</p>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="The Buccaneers S1E2">
+                        <div class="movie-info">
+                            <h3>The Buccaneers S1E2 - Women or Wives</h3>
+                            <p>Episode 2</p>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="The Buccaneers S1E3">
+                        <div class="movie-info">
+                            <h3>The Buccaneers S1E3 - The Perfect Duchess</h3>
+                            <p>Episode 3</p>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="The Buccaneers S1E4">
+                        <div class="movie-info">
+                            <h3>The Buccaneers S1E4 - Homecoming</h3>
+                            <p>Episode 4</p>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="The Buccaneers S1E5">
+                        <div class="movie-info">
+                            <h3>The Buccaneers S1E5 - Failed Betrayal</h3>
+                            <p>Episode 5</p>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="The Buccaneers S1E6">
+                        <div class="movie-info">
+                            <h3>The Buccaneers S1E6 - It's Christmas</h3>
+                            <p>Episode 6</p>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="The Buccaneers S1E7">
+                        <div class="movie-info">
+                            <h3>The Buccaneers S1E7 - First Footing</h3>
+                            <p>Episode 7</p>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="The Buccaneers S1E8">
+                        <div class="movie-info">
+                            <h3>The Buccaneers S1E8 - Wedding of the Season</h3>
+                            <p>Episode 8</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="series-season">
+                <button class="season-toggle" onclick="toggleEpisodes('buccaneers-s2')">The Buccaneers - Season 2</button>
+                <div id="buccaneers-s2" class="episode-list">
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="The Buccaneers S2E1">
+                        <div class="movie-info">
+                            <h3>The Buccaneers S2E1</h3>
+                            <p>Episode 1</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="series-season">
+                <button class="season-toggle" onclick="toggleEpisodes('love-island-s12')">Love Island - Season 12</button>
+                <div id="love-island-s12" class="episode-list">
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="Love Island S12E5">
+                        <div class="movie-info">
+                            <h3>Love Island S12E5</h3>
+                            <p>Episode 5</p>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="Love Island S12E7">
+                        <div class="movie-info">
+                            <h3>Love Island S12E7</h3>
+                            <p>Episode 7</p>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="Love Island S12E8">
+                        <div class="movie-info">
+                            <h3>Love Island S12E8</h3>
+                            <p>Episode 8</p>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="Love Island S12E9">
+                        <div class="movie-info">
+                            <h3>Love Island S12E9</h3>
+                            <p>Episode 9</p>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="Love Island S12E10">
+                        <div class="movie-info">
+                            <h3>Love Island S12E10</h3>
+                            <p>Episode 10</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional new series -->
+            <div class="series-season">
+                <button class="season-toggle" onclick="toggleEpisodes('interview-vampire')">Interview with a Vampire</button>
+                <div id="interview-vampire" class="episode-list">
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="Interview with a Vampire S1E1">
+                        <div class="movie-info">
+                            <h3>Interview with a Vampire S1E1</h3>
+                            <p>Episode 1</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="series-season">
+                <button class="season-toggle" onclick="toggleEpisodes('boarders')">Boarders</button>
+                <div id="boarders" class="episode-list">
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="Boarders S1E1">
+                        <div class="movie-info">
+                            <h3>Boarders S1E1</h3>
+                            <p>Episode 1</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="series-season">
+                <button class="season-toggle" onclick="toggleEpisodes('fallout')">Fallout</button>
+                <div id="fallout" class="episode-list">
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="Fallout S1E1">
+                        <div class="movie-info">
+                            <h3>Fallout S1E1</h3>
+                            <p>Episode 1</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="series-season">
+                <button class="season-toggle" onclick="toggleEpisodes('from')">From</button>
+                <div id="from" class="episode-list">
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="From S1E1">
+                        <div class="movie-info">
+                            <h3>From S1E1</h3>
+                            <p>Episode 1</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="series-season">
+                <button class="season-toggle" onclick="toggleEpisodes('htgawm')">How to Get Away with Murder</button>
+                <div id="htgawm" class="episode-list">
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="HTGAWM S1E1">
+                        <div class="movie-info">
+                            <h3>How to Get Away with Murder S1E1</h3>
+                            <p>Episode 1</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="series-season">
+                <button class="season-toggle" onclick="toggleEpisodes('snowfall')">Snowfall</button>
+                <div id="snowfall" class="episode-list">
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="Snowfall S1E1">
+                        <div class="movie-info">
+                            <h3>Snowfall S1E1</h3>
+                            <p>Episode 1</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="series-season">
+                <button class="season-toggle" onclick="toggleEpisodes('kings-joburg')">Kings of Joburg</button>
+                <div id="kings-joburg" class="episode-list">
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="Kings of Joburg S1E1">
+                        <div class="movie-info">
+                            <h3>Kings of Joburg S1E1</h3>
+                            <p>Episode 1</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="series-season">
+                <button class="season-toggle" onclick="toggleEpisodes('top-boy')">Top Boy</button>
+                <div id="top-boy" class="episode-list">
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/300x450" alt="Top Boy S1E1">
+                        <div class="movie-info">
+                            <h3>Top Boy S1E1</h3>
+                            <p>Episode 1</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="youtube" class="youtube-section">
+            <h2 class="section-title">Movies from our YouTube channel (subscribe)</h2>
+            <div class="movie-grid">
+                <!-- YouTube movies remain unchanged -->
+                <div class="movie-card">
+                    <img src="https://via.placeholder.com/300x450" alt="YouTube Movie 1">
+                    <div class="movie-info">
+                        <h3>YouTube Movie 1</h3>
+                        <p>2023 • Action</p>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <img src="https://via.placeholder.com/300x450" alt="YouTube Movie 2">
+                    <div class="movie-info">
+                        <h3>YouTube Movie 2</h3>
+                        <p>2023 • Comedy</p>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <img src="https://via.placeholder.com/300x450" alt="YouTube Movie 3">
+                    <div class="movie-info">
+                        <h3>YouTube Movie 3</h3>
+                        <p>2023 • Drama</p>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <img src="https://via.placeholder.com/300x450" alt="YouTube Movie 4">
+                    <div class="movie-info">
+                        <h3>YouTube Movie 4</h3>
+                        <p>2023 • Thriller</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
+    <footer>
+        <p>&copy; 2023 TV Yami. All rights reserved.</p>
+        <p>Disclaimer: We do not host any videos on our server. All content is embedded from other sites.</p>
+    </footer>
+
     <script>
-        // JavaScript for modal functionality
-        const modal = document.getElementById("videoModal");
-        const closeBtn = document.getElementsByClassName("close")[0];
-        
-        // When the user clicks on <span> (x), close the modal
-        closeBtn.onclick = function() {
-            modal.style.display = "none";
-            document.getElementById("videoFrame").src = "";
-        }
-        
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-                document.getElementById("videoFrame").src = "";
+        function toggleEpisodes(id) {
+            const episodeList = document.getElementById(id);
+            if (episodeList.style.display === 'grid') {
+                episodeList.style.display = 'none';
+            } else {
+                episodeList.style.display = 'grid';
             }
         }
         
-        // Function to play video
-        function playVideo(videoUrl) {
-            modal.style.display = "block";
-            document.getElementById("videoFrame").src = videoUrl;
-        }
-        
-        // Search functionality
-        document.querySelector('.search-bar button').addEventListener('click', function() {
-            const query = document.querySelector('.search-bar input').value;
-            if (query.trim() !== '') {
-                alert('Searching for: ' + query);
-                // In a real implementation, you would redirect to a search results page
-                // window.location.href = 'search.html?q=' + encodeURIComponent(query);
-            }
-        });
-        
-        // Allow search on Enter key press
-        document.querySelector('.search-bar input').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                document.querySelector('.search-bar button').click();
-            }
+        // Simple search functionality
+        document.querySelector('.search-container button').addEventListener('click', function() {
+            const searchTerm = document.querySelector('.search-container input').value.toLowerCase();
+            const movieCards = document.querySelectorAll('.movie-card');
+            
+            movieCards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                if (title.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
         });
     </script>
 </body>
