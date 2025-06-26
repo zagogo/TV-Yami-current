@@ -2861,6 +2861,124 @@
         });
     }
 
+        // Series Display Functions - Updated
+    function showSeasons(seriesId, event) {
+      event.preventDefault();
+      event.stopPropagation();
+      
+      const series = seriesDatabase[seriesId];
+      if (!series) return;
+      
+      document.getElementById('seriesTitle').textContent = series.title;
+      const seasonsContainer = document.getElementById('seasonsContainer');
+      seasonsContainer.innerHTML = '';
+      
+      // Create season buttons
+      Object.keys(series.seasons).forEach(seasonNum => {
+        const seasonBtn = document.createElement('button');
+        seasonBtn.className = 'category';
+        seasonBtn.textContent = `Season ${seasonNum}`;
+        seasonBtn.onclick = (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          showEpisodes(seriesId, seasonNum);
+        };
+        seasonsContainer.appendChild(seasonBtn);
+      });
+      
+      document.getElementById('seasonsModal').style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function showEpisodes(seriesId, seasonNum) {
+      const series = seriesDatabase[seriesId];
+      if (!series || !series.seasons[seasonNum]) return;
+      
+      document.getElementById('seasonTitle').textContent = `${series.title} - Season ${seasonNum}`;
+      const episodesContainer = document.getElementById('episodesContainer');
+      episodesContainer.innerHTML = '';
+      
+      // Create episode list
+      Object.keys(series.seasons[seasonNum].episodes).forEach(episodeNum => {
+        const episode = series.seasons[seasonNum].episodes[episodeNum];
+        const episodeItem = document.createElement('div');
+        episodeItem.className = 'episode-item';
+        episodeItem.innerHTML = `
+          <div class="episode-title">Episode ${episodeNum}: ${episode.title}</div>
+          <button class="watch-episode-btn" onclick="openModal('${episode.url}', '${series.title} S${seasonNum}E${episodeNum}: ${episode.title}')">
+            Watch Now
+          </button>
+        `;
+        episodesContainer.appendChild(episodeItem);
+      });
+      
+      closeSeasonsModal();
+      document.getElementById('episodesModal').style.display = 'block';
+    }
+
+    function closeSeasonsModal() {
+      document.getElementById('seasonsModal').style.display = 'none';
+    }
+
+    function closeEpisodesModal() {
+      document.getElementById('episodesModal').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    // Series Pagination - Updated
+    const seriesPerPage = 10;
+    let currentSeriesPage = 1;
+
+    function displaySeries(page) {
+      const seriesContainer = document.getElementById('seriesContainer');
+      seriesContainer.innerHTML = '';
+      
+      const start = (page - 1) * seriesPerPage;
+      const end = start + seriesPerPage;
+      const seriesKeys = Object.keys(seriesDatabase).slice(start, end);
+      
+      seriesKeys.forEach(seriesId => {
+        const series = seriesDatabase[seriesId];
+        const previewItem = document.createElement('div');
+        previewItem.className = 'preview-item';
+        previewItem.innerHTML = `
+          <div class="thumbnail-container" style="height: 250px;">
+            <img src="${series.poster}" alt="${series.title}" 
+                 onerror="this.src='https://via.placeholder.com/300x450?text=No+Thumbnail'">
+            <div class="play-button"></div>
+          </div>
+          <div class="preview-title">${series.title}</div>
+        `;
+        previewItem.addEventListener('click', (e) => showSeasons(seriesId, e));
+        seriesContainer.appendChild(previewItem);
+      });
+      
+      updateSeriesPagination();
+    }
+
+    function updateSeriesPagination() {
+      const seriesPagination = document.getElementById('seriesPagination');
+      const totalSeries = Object.keys(seriesDatabase).length;
+      const totalPages = Math.ceil(totalSeries / seriesPerPage);
+      
+      seriesPagination.innerHTML = '';
+      
+      for (let i = 1; i <= totalPages; i++) {
+        const pageBtn = document.createElement('button');
+        pageBtn.className = 'page-btn';
+        if (i === currentSeriesPage) pageBtn.classList.add('active');
+        pageBtn.textContent = i;
+        pageBtn.onclick = () => {
+          currentSeriesPage = i;
+          displaySeries(currentSeriesPage);
+        };
+        seriesPagination.appendChild(pageBtn);
+      }
+    }
+
+    // Initialize series display
+    displaySeries(currentSeriesPage);
+
     // Initialize movies and series display
     displayMovies(currentPage);
     displaySeries(currentSeriesPage);
