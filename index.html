@@ -7,24 +7,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="TV Yami offers free streaming of South African, American TV Shows, and Movies. Watch anytime, anywhere." />
-  <meta name="keywords" content="TV Yami, South African TV, Skeem Saam, Ithonga, Genesis, Xrepo, Movies, Free Streaming, American TV Shows, tvyami, tv yami" />
+  <meta name="keywords" content="TV Yami, South African TV, Skeem Saam, Ithonga, Genesis, Xrepo, Movies, Free Streaming, American TV Shows" />
   <meta name="google-site-verification" content="SxXcwQdqUlWLjt456JwV8YfWjovUXvFl_CIgtUGweD0" />
   <title>TV Yami – Free SA & US TV Shows + Movies</title>
-
-  <!-- Schema.org markup for Google -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "TV Yami",
-    "url": "https://tvyami.online",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://tvyami.online/?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
 
   <!-- Ads with proper async loading to prevent blocking -->
   <script async src='//pl26630947.profitableratecpm.com/91/50/ce/9150ce4b254464961b06ccaa256200ea.js'></script>
@@ -580,6 +565,43 @@
       text-align: center;
     }
 
+    /* Responsive adjustments */
+    @media (max-width: 1200px) {
+      .movies-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      }
+    }
+
+    @media (max-width: 900px) {
+      .movies-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .movies-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      }
+      
+      .preview-item {
+        width: 150px;
+      }
+      
+      .preview-thumbnail {
+        height: 200px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .movies-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      }
+      
+      .preview-item {
+        width: 100%;
+      }
+    }
+
     /* All videos section */
     .all-videos-grid {
       display: grid;
@@ -625,15 +647,6 @@
     .watch-episode-btn:hover {
       background: #e03e00;
     }
-
-    /* Button container */
-    .button-container {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-      margin: 20px 0;
-    }
   </style>
 </head>
 <body>
@@ -667,22 +680,12 @@
     <a class="category" href="https://tvyami.blogspot.com/search/label/Comedy?&max-results=6" target="_blank">Comedy</a>
   </div>
 
-  <div class="button-container">
-    <button class="watch-now" onclick="window.open('https://tvyami.blogspot.com/', '_blank')">🎬 Watch Now</button>
-    <button class="watch-now" onclick="showAllMovies()">🎥 Show All Movies (A-Z)</button>
-    <button class="watch-now" onclick="showAllSeries()">📺 Show All Series (A-Z)</button>
-  </div>
+  <button class="watch-now" onclick="window.open('https://tvyami.blogspot.com/', '_blank')">🎬 Watch Now</button>
+  <button class="watch-now" onclick="showAllVideos()">📺 Show All Videos (A-Z)</button>
 
-  <div id="allMoviesSection" style="display:none;">
-    <h2 style="color: #FFD700; text-shadow: 1px 1px 3px #000;">All Movies (A-Z)</h2>
-    <div id="allMoviesContainer" class="all-videos-grid"></div>
-    <div class="pagination" id="allMoviesPagination"></div>
-  </div>
-
-  <div id="allSeriesSection" style="display:none;">
-    <h2 style="color: #FFD700; text-shadow: 1px 1px 3px #000;">All Series (A-Z)</h2>
-    <div id="allSeriesContainer" class="all-videos-grid"></div>
-    <div class="pagination" id="allSeriesPagination"></div>
+  <div id="allVideosSection" style="display:none;">
+    <h2 style="color: #FFD700; text-shadow: 1px 1px 3px #000;">All Videos (A-Z)</h2>
+    <div id="allVideosContainer" class="all-videos-grid"></div>
   </div>
 
   <!-- Google Drive Videos Section (Now First) -->
@@ -859,8 +862,6 @@
   <div class="section">
     <h2>Why TV Yami?</h2>
     <p>TV Yami brings you the hottest Movies and binge-worthy TV Shows from around the world. From explosive action to heartwarming drama, there's something here for every mood. Stay tuned and never miss a moment of entertainment!</p>
-    <p>With our extensive collection of South African and American content, TV Yami is your premier destination for free streaming. Our platform is constantly updated with the latest releases and classic favorites, ensuring you always have something great to watch.</p>
-    <p>Whether you're looking for the latest blockbusters, trending TV series, or hidden gems, TV Yami has you covered. Our user-friendly interface makes it easy to find exactly what you're looking for, with powerful search functionality and organized categories.</p>
   </div>
 
   <!-- Bottom Ad Position -->
@@ -1131,22 +1132,6 @@
               "4": {
                 title: "Episode 4",
                 url: "https://drive.google.com/file/d/1TEH2DZg1YFbsOV-q8JcoTBQO__Aw2gSJ/preview"
-              },
-              "5": {
-                title: "The Vineyard",
-                url: "https://drive.google.com/file/d/1i6HQbzPGYR_jwHKIEDocHmWNE_OS339X/preview"
-              },
-              "6": {
-                title: "The Honeymoon",
-                url: "https://drive.google.com/file/d/1bI-_CYBnpt-YPl7H_grFBmbW0dWySjY-/preview"
-              },
-              "7": {
-                title: "Deep End",
-                url: "https://drive.google.com/file/d/1w1qciwc9jBYsvqZPnTlGZ0wDRzamZryz/preview"
-              },
-              "8": {
-                title: "Forever",
-                url: "https://drive.google.com/file/d/1y1Z6t8oZwQ9UyLRQpl3A9upwOAKXSnio/preview"
               }
             }
           }
@@ -1174,26 +1159,6 @@
               "4": {
                 title: "Episode 4",
                 url: "https://drive.google.com/file/d/1G2vK92F1IiXrBfV2_aYi7LCzrIQnAjR_/preview"
-              },
-              "5": {
-                title: "Episode 5",
-                url: "https://drive.google.com/file/d/1wrmyohdYxt6e_86yjy4WehNf9gJs0f0r/preview"
-              },
-              "7": {
-                title: "Episode 7",
-                url: "https://drive.google.com/file/d/1kBUxyO5S7ptop7uv9ASk90rVmDV52Zv2/preview"
-              },
-              "8": {
-                title: "Episode 8",
-                url: "https://drive.google.com/file/d/1WTKHQLbrkQ5Y3g-n2J6DYbMBxJGnqyfB/preview"
-              },
-              "9": {
-                title: "Episode 9",
-                url: "https://drive.google.com/file/d/1uX_lIKDtwgx_kh8w8kS1eytKwWVKSa0P/preview"
-              },
-              "10": {
-                title: "Episode 10",
-                url: "https://drive.google.com/file/d/1eszw9iAxz5O44KqyKNy75UopMahLKq7W/preview"
               }
             }
           }
@@ -1208,27 +1173,7 @@
             episodes: {
               "1": {
                 title: "Queen to Be",
-                url: "https://drive.google.com/file/d/1ksucPLc15paA3fLEE6WCwiIrFVq3_bqd/preview"
-              },
-              "2": {
-                title: "Honey and the Hive",
-                url: "https://drive.google.com/file/d/1bW9gBQmxKktKZTO8oPeviSsRTNfq3YFw/preview"
-              },
-              "3": {
-                title: "Even Days",
-                url: "https://drive.google.com/file/d/14fiZI1VEi48-cJxblxFEfT2pLTGEIg9I/preview"
-              },
-              "4": {
-                title: "Holding the King",
-                url: "https://drive.google.com/file/d/15LlF9PdgsLEeNzXMRcvQVdJt8Ep8DFcb/preview"
-              },
-              "5": {
-                title: "Gardens in Bloom",
-                url: "https://drive.google.com/file/d/184TLIv6MolVpX_K5pSIxWz1rpBfbJ-zH/preview"
-              },
-              "6": {
-                title: "Crown Jewels",
-                url: "https://drive.google.com/file/d/1W5Y1GTmrku2nftI2U7wFNFYGPpj1VbIu/preview"
+                url: "https://drive.google.com/file/d/1examplelink17/preview"
               }
             }
           }
@@ -1416,10 +1361,6 @@
               "4": {
                 title: "Episode 4",
                 url: "https://drive.google.com/file/d/1_7w0ngVSQHxJ0uU5w5T41lJu4wFMpj9S/preview"
-              },
-              "5": {
-                title: "Episode 5",
-                url: "https://drive.google.com/file/d/1GHSVuQEWGmYVqZDI2wpMmKJLu-N7RGek/preview"
               }
             }
           }
@@ -1514,344 +1455,69 @@
             }
           }
         }
-      },
-      "buccaneers": {
-        title: "The Buccaneers",
-        poster: "https://m.media-amazon.com/images/M/MV5BZTA2YzY0YjYtYjQ4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg",
-        description: "A group of fun-loving young American girls explode into 1870s London high society, kicking off an Anglo-American culture clash as the land of the stiff upper lip is infiltrated by a refreshing disregard for centuries of tradition.",
-        seasons: {
-          "1": {
-            episodes: {
-              "1": {
-                title: "American Poison",
-                url: "https://drive.google.com/file/d/100AGe6HKJII9PJm2Oun9FoW0pmOSyeQ2/preview"
-              },
-              "2": {
-                title: "Women or Wives",
-                url: "https://drive.google.com/file/d/1LXVi25zKnuwPusJNYfkysVMv-gLWKo2L/preview"
-              },
-              "3": {
-                title: "The Perfect Duchess",
-                url: "https://drive.google.com/file/d/1tFdTd-tPcW_XDIzBzI6Id8dX-xf5qv9K/preview"
-              },
-              "4": {
-                title: "Homecoming",
-                url: "https://drive.google.com/file/d/1jLkGyoTJImMByGJGaQIeJB1_M-IlSkAt/preview"
-              },
-              "5": {
-                title: "Failed Betrayal",
-                url: "https://drive.google.com/file/d/1KmvL4vqY1LfBlQZBmz85wRFnMn7Fb-NG/preview"
-              },
-              "6": {
-                title: "It's Christmas",
-                url: "https://drive.google.com/file/d/1NcQ4Iok4g-az9Y-_gv3EAZ73QeSLNLII/preview"
-              },
-              "7": {
-                title: "First Footing",
-                url: "https://drive.google.com/file/d/18_lEI8RBJOSinFXCHNyvLBcejSEbJnc2/preview"
-              },
-              "8": {
-                title: "Wedding of the Season",
-                url: "https://drive.google.com/file/d/1BKJrvNLYgYcsoPLd-oKA5TNjorRA4Ju0/preview"
-              }
-            }
-          },
-          "2": {
-            episodes: {
-              "1": {
-                title: "Episode 1",
-                url: "https://drive.google.com/file/d/1OOIyPifXDlfaJP3C5RQW0iuHKsO7g47s/preview"
-              }
-            }
-          }
-        }
-      },
-      "boarders": {
-        title: "Boarders",
-        poster: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg",
-        description: "Five talented Black inner-city teenagers are given scholarships to attend an elite boarding school.",
-        seasons: {
-          "1": {
-            episodes: {
-              "1": {
-                title: "Episode 1",
-                url: "https://drive.google.com/file/d/1examplelink29/preview"
-              }
-            }
-          }
-        }
-      },
-      "fallout": {
-        title: "Fallout",
-        poster: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg",
-        description: "In a future, post-apocalyptic Los Angeles brought about by nuclear decimation, citizens must live in underground bunkers to protect themselves from radiation, mutants and bandits.",
-        seasons: {
-          "1": {
-            episodes: {
-              "1": {
-                title: "Episode 1",
-                url: "https://drive.google.com/file/d/1examplelink30/preview"
-              }
-            }
-          }
-        }
-      },
-      "from": {
-        title: "From",
-        poster: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg",
-        description: "Unravel the mystery of a nightmarish town in middle America that traps all those who enter.",
-        seasons: {
-          "1": {
-            episodes: {
-              "1": {
-                title: "Episode 1",
-                url: "https://drive.google.com/file/d/1examplelink31/preview"
-              }
-            }
-          }
-        }
-      },
-      "howtogetaway": {
-        title: "How to Get Away with Murder",
-        poster: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg",
-        description: "A group of ambitious law students and their brilliant criminal defense professor become involved in a twisted murder plot that promises to change the course of their lives.",
-        seasons: {
-          "1": {
-            episodes: {
-              "1": {
-                title: "Pilot",
-                url: "https://drive.google.com/file/d/1examplelink32/preview"
-              }
-            }
-          }
-        }
-      },
-      "snowfall": {
-        title: "Snowfall",
-        poster: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg",
-        description: "A look at the early days of the crack cocaine epidemic in Los Angeles during the beginning of the 1980s.",
-        seasons: {
-          "1": {
-            episodes: {
-              "1": {
-                title: "Pilot",
-                url: "https://drive.google.com/file/d/1examplelink33/preview"
-              }
-            }
-          }
-        }
-      },
-      "bigcigar": {
-        title: "The Big Cigar",
-        poster: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg",
-        description: "The incredible true story of Black Panther leader Huey P. Newton's escape to Cuba.",
-        seasons: {
-          "1": {
-            episodes: {
-              "1": {
-                title: "Episode 1",
-                url: "https://drive.google.com/file/d/14l43nh6Ngm3gv-p8toylqxLjVMlB071o/preview"
-              }
-            }
-          }
-        }
-      },
-      "kingsofjoberg": {
-        title: "Kings of Joburg",
-        poster: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg",
-        description: "After the death of Johannesburg's crime kingpin, his brother steps in to take over the family business while trying to keep his brothers from destroying each other.",
-        seasons: {
-          "1": {
-            episodes: {
-              "1": {
-                title: "Episode 1",
-                url: "https://drive.google.com/file/d/1examplelink34/preview"
-              }
-            }
-          }
-        }
-      },
-      "sweettooth": {
-        title: "Sweet Tooth",
-        poster: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg",
-        description: "A boy who is half human and half deer survives in a post-apocalyptic world with other hybrids.",
-        seasons: {
-          "1": {
-            episodes: {
-              "1": {
-                title: "Episode 1",
-                url: "https://drive.google.com/file/d/1examplelink35/preview"
-              }
-            }
-          }
-        }
-      },
-      "americangods": {
-        title: "American Gods",
-        poster: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg",
-        description: "A recently released ex-convict named Shadow meets a mysterious man who calls himself Wednesday and who knows more than he first seems to about Shadow's life and past.",
-        seasons: {
-          "1": {
-            episodes: {
-              "1": {
-                title: "The Bone Orchard",
-                url: "https://drive.google.com/file/d/1examplelink36/preview"
-              }
-            }
-          }
-        }
-      },
-      "primetarget": {
-        title: "Prime Target",
-        poster: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg",
-        description: "A detective investigates a series of murders that may be connected to a secret government program.",
-        seasons: {
-          "1": {
-            episodes: {
-              "1": {
-                title: "Episode 1",
-                url: "https://drive.google.com/file/d/1examplelink37/preview"
-              }
-            }
-          }
-        }
-      },
-      "abbottelementary": {
-        title: "Abbott Elementary",
-        poster: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg",
-        description: "A workplace comedy following a group of dedicated, passionate teachers and a slightly tone-deaf principal at a Philadelphia public school.",
-        seasons: {
-          "1": {
-            episodes: {
-              "1": {
-                title: "Pilot",
-                url: "https://drive.google.com/file/d/1examplelink38/preview"
-              }
-            }
-          }
-        }
-      },
-      "bet": {
-        title: "Bet",
-        poster: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg",
-        description: "A dark comedy about a man who makes a bet with the devil and must navigate the consequences.",
-        seasons: {
-          "1": {
-            episodes: {
-              "1": {
-                title: "Episode 1",
-                url: "https://drive.google.com/file/d/1examplelink39/preview"
-              }
-            }
-          }
-        }
-      },
-      "lastofus": {
-        title: "The Last of Us",
-        poster: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg",
-        description: "After a global pandemic destroys civilization, a hardened survivor takes charge of a 14-year-old girl who may be humanity's last hope.",
-        seasons: {
-          "1": {
-            episodes: {
-              "1": {
-                title: "When You're Lost in the Darkness",
-                url: "https://drive.google.com/file/d/1examplelink40/preview"
-              }
-            }
-          }
-        }
-      },
-      "titans": {
-        title: "Titans",
-        poster: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg",
-        description: "A team of young superheroes led by Nightwing (formerly Batman's first Robin) form to combat evil and other perils.",
-        seasons: {
-          "1": {
-            episodes: {
-              "1": {
-                title: "Titans",
-                url: "https://drive.google.com/file/d/1examplelink41/preview"
-              }
-            }
-          }
-        }
-      },
-      "cloakanddagger": {
-        title: "Cloak & Dagger",
-        poster: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg",
-        description: "Two teenagers from very different backgrounds find themselves burdened and awakened to newly acquired superpowers while falling in love.",
-        seasons: {
-          "1": {
-            episodes: {
-              "1": {
-                title: "First Light",
-                url: "https://drive.google.com/file/d/1examplelink42/preview"
-              }
-            }
-          }
-        }
-      },
-      "goosebumps": {
-        title: "Goosebumps",
-        poster: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg",
-        description: "A group of five high schoolers embark on a shadowy and twisted journey to investigate the tragic passing three decades earlier of a teen named Harold Biddle - while also unearthing dark secrets from their parents' past.",
-        seasons: {
-          "1": {
-            episodes: {
-              "1": {
-                title: "Say Cheese and Die!",
-                url: "https://drive.google.com/file/d/1examplelink43/preview"
-              }
-            }
-          }
-        }
-      },
-      "westworld": {
-        title: "Westworld",
-        poster: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg",
-        description: "At the intersection of the near future and the reimagined past, waits a world in which every human appetite can be indulged without consequence.",
-        seasons: {
-          "1": {
-            episodes: {
-              "1": {
-                title: "The Original",
-                url: "https://drive.google.com/file/d/1examplelink44/preview"
-              }
-            }
-          }
-        }
-      },
-      "schoolofgood": {
-        title: "The School for Good and Evil",
-        poster: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg",
-        description: "Best friends Sophie and Agatha find themselves on opposing sides of an epic battle when they're swept away into an enchanted school where aspiring heroes and villains are trained to protect the balance between good and evil.",
-        seasons: {
-          "1": {
-            episodes: {
-              "1": {
-                title: "Episode 1",
-                url: "https://drive.google.com/file/d/1examplelink45/preview"
-              }
-            }
-          }
-        }
-      },
-      "topboy": {
-        title: "Top Boy",
-        poster: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg",
-        description: "Two London drug dealers ply their lucrative trade at a public housing estate in East London.",
-        seasons: {
-          "1": {
-            episodes: {
-              "1": {
-                title: "Episode 1",
-                url: "https://drive.google.com/file/d/1examplelink46/preview"
-              }
-            }
-          }
-        }
       }
     };
+
+    // Series functions
+    function showSeasons(seriesId, event) {
+      event.stopPropagation();
+      const series = seriesDatabase[seriesId];
+      document.getElementById('seriesTitle').textContent = series.title;
+      
+      const seasonsContainer = document.getElementById('seasonsContainer');
+      seasonsContainer.innerHTML = '';
+      
+      // Create season buttons
+      for (const seasonNum in series.seasons) {
+        const seasonBtn = document.createElement('button');
+        seasonBtn.className = 'category';
+        seasonBtn.textContent = `Season ${seasonNum}`;
+        seasonBtn.onclick = (e) => {
+          e.stopPropagation();
+          showEpisodes(seriesId, seasonNum);
+        };
+        seasonsContainer.appendChild(seasonBtn);
+      }
+      
+      document.getElementById('seasonsModal').style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function showEpisodes(seriesId, seasonNum) {
+      const series = seriesDatabase[seriesId];
+      const season = series.seasons[seasonNum];
+      
+      document.getElementById('seasonTitle').textContent = `${series.title} - Season ${seasonNum}`;
+      
+      const episodesContainer = document.getElementById('episodesContainer');
+      episodesContainer.innerHTML = '';
+      
+      // Create episode list
+      for (const episodeNum in season.episodes) {
+        const episode = season.episodes[episodeNum];
+        const episodeItem = document.createElement('div');
+        episodeItem.className = 'episode-item';
+        episodeItem.innerHTML = `
+          <div class="episode-title">Episode ${episodeNum}: ${episode.title}</div>
+          <button class="watch-episode-btn" onclick="openModal('${episode.url}', '${series.title} S${seasonNum}E${episodeNum}: ${episode.title}')">
+            Watch Now
+          </button>
+        `;
+        episodesContainer.appendChild(episodeItem);
+      }
+      
+      closeSeasonsModal();
+      document.getElementById('episodesModal').style.display = 'block';
+    }
+
+    function closeSeasonsModal() {
+      document.getElementById('seasonsModal').style.display = 'none';
+    }
+
+    function closeEpisodesModal() {
+      document.getElementById('episodesModal').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
 
     // Content database for search and display
     const contentDatabase = [
@@ -1964,153 +1630,6 @@
         url: "https://drive.google.com/file/d/1j8_klewZ10qpS1wqZQH5BY0e7OljkJKa/preview", 
         type: "movie",
         thumbnail: "https://m.media-amazon.com/images/M/MV5BNTFjZTI0NmMtNDBmZC00MTUzLWI4ZmQtOGI4NGQ4N2NkZmMwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
-      },
-      { 
-        title: "Billion Dollar Bluff", 
-        year: "2024", 
-        url: "https://drive.google.com/file/d/1Y6NDdTzJoyEqXxzKr9n7CmVtTEqySCgG/preview", 
-        type: "movie",
-        thumbnail: "https://m.media-amazon.com/images/M/MV5BNjUzMjhkZjktNTU5Mi00MzhmLWJhMTQtZjhkYjczOTEzM2M5XkEyXkFqcGc@._V1_.jpg"
-      },
-      { 
-        title: "Coyote Ugly", 
-        year: "2000", 
-        url: "https://drive.google.com/file/d/1KoyikROiNMLe0wI_AJy_qquVDKHXs5rG/preview", 
-        type: "movie",
-        thumbnail: "https://m.media-amazon.com/images/M/MV5BMTUyZTUyOTMtOGU5OC00MmM1LTk0NWUtMjNlMTU4ZTkwMDRjXkEyXkFqcGc@._V1_.jpg"
-      },
-      { 
-        title: "Gabriel Fluffy Iglesias: One Show Fits All", 
-        year: "2019", 
-        url: "https://drive.google.com/file/d/1V6x2-dr7kHLh99RuHgDjlM9311HGXM1S/preview", 
-        type: "movie",
-        thumbnail: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg"
-      },
-      { 
-        title: "Hip Hop and the White House", 
-        year: "2024", 
-        url: "https://drive.google.com/file/d/1lxApK8OiM5-WjKW-rBmDL5YYfP96reMv/preview", 
-        type: "movie",
-        thumbnail: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg"
-      },
-      { 
-        title: "Icahn: The Restless Billionaire", 
-        year: "2022", 
-        url: "https://drive.google.com/file/d/15xhKYcwHzENfnvf_cH6_Xv-xPL2XnFKy/preview", 
-        type: "movie",
-        thumbnail: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg"
-      },
-      { 
-        title: "Love Jones", 
-        year: "1997", 
-        url: "https://drive.google.com/file/d/17yV1767G8olX3RbG6DykEBFlh7HcC9Z0/preview", 
-        type: "movie",
-        thumbnail: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg"
-      },
-      { 
-        title: "Mr. Crocket", 
-        year: "2024", 
-        url: "https://drive.google.com/file/d/1BBlvFvE-RWlPVCtR8gtMpwV2k4m1GaGx/preview", 
-        type: "movie",
-        thumbnail: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg"
-      },
-      { 
-        title: "The Front Room", 
-        year: "2024", 
-        url: "https://drive.google.com/file/d/1oswPTEM6xIX0MZoQ_mIe2dPUZcW4x71R/preview", 
-        type: "movie",
-        thumbnail: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg"
-      },
-      { 
-        title: "The Supremes at Earl's All-You-Can-Eat", 
-        year: "2024", 
-        url: "https://drive.google.com/file/d/1UIAMkTl3pKN18la7RD_JI24p0EwRUJuD/preview", 
-        type: "movie",
-        thumbnail: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg"
-      },
-      { 
-        title: "K.O.", 
-        year: "2025", 
-        url: "https://drive.google.com/file/d/1NFRJzjRUINBQbJp0fn2KooJoY14fRgSt/preview", 
-        type: "movie",
-        thumbnail: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg"
-      },
-      { 
-        title: "Black Tea", 
-        year: "2024", 
-        url: "https://drive.google.com/file/d/1Eo5gfettsOgq5pwcXqftlfbXaUZoCPt7/preview", 
-        type: "movie",
-        thumbnail: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg"
-      },
-      { 
-        title: "Blade", 
-        year: "1998", 
-        url: "https://drive.google.com/file/d/1S-WCetCH-M8LxLPKcI4cJo-OB28SPRG7/preview", 
-        type: "movie",
-        thumbnail: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg"
-      },
-      { 
-        title: "Blue Lagoon", 
-        year: "1980", 
-        url: "https://drive.google.com/file/d/1adIqg3a_-0N6ud0lACqtiLKtRk-Vf2Q9/preview", 
-        type: "movie",
-        thumbnail: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg"
-      },
-      { 
-        title: "California King", 
-        year: "2025", 
-        url: "https://drive.google.com/file/d/1sjVrJQ9U2EurmO6K-edSS-56aqXfLQVw/preview", 
-        type: "movie",
-        thumbnail: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg"
-      },
-      { 
-        title: "Foxy Brown", 
-        year: "1974", 
-        url: "https://drive.google.com/file/d/1CFvOH3LpuwXp87OKS_xH2TP2s4YA3Cw-/preview", 
-        type: "movie",
-        thumbnail: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg"
-      },
-      { 
-        title: "Invictus", 
-        year: "2009", 
-        url: "https://drive.google.com/file/d/1QYsBqvlZlFrIIPgo9QWM43t5JmAuO1qV/preview", 
-        type: "movie",
-        thumbnail: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg"
-      },
-      { 
-        title: "Malcolm X", 
-        year: "1992", 
-        url: "https://drive.google.com/file/d/1cIMedG8r-34p7eAVtIv-tgCDpriW-y6j/preview", 
-        type: "movie",
-        thumbnail: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg"
-      },
-      { 
-        title: "Origin", 
-        year: "2023", 
-        url: "https://drive.google.com/file/d/17P_ugyI1B0rg-FHl2WhIGcGnhDLPNIX4/preview", 
-        type: "movie",
-        thumbnail: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg"
-      },
-      { 
-        title: "Soul", 
-        year: "2020", 
-        url: "https://drive.google.com/file/d/1PcuzkmzNTGnQsBpg8DrOigDlz33tPN7F/preview", 
-        type: "movie",
-        thumbnail: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg"
-      },
-      { 
-        title: "Straw", 
-        year: "2025", 
-        url: "https://drive.google.com/file/d/1dgCuK_AJkAPg0KMqeYPFwZCU97CNYPUJ/preview", 
-        type: "movie",
-        thumbnail: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg"
-      },
-      { 
-        title: "The Autobiography of Miss Jane Pittman", 
-        year: "1974", 
-        url: "https://drive.google.com/file/d/1RQJmL3ku3Sjn2PNY1IblQOODwhMHuRkv/preview", 
-        type: "movie",
-        thumbnail: "https://m.media-amazon.com/images/M/MV5BZjY4YzQ5YjYtY2Q4MC00ZTI4LTk4Y2YtYjU5YzVlZTAxYzQ5XkEyXkFqcGc@._V1_.jpg"
       },
       { 
         title: "Amsterdam", 
@@ -2229,7 +1748,7 @@
         year: "2025", 
         url: "https://drive.google.com/file/d/16s3wgjAcgpk62Mko70fC3kpk3U3hg5jT/preview", 
         type: "movie",
-        thumbnail: "https://m.media-amazon.com/images/M/MV5BYzM4Mzk1YjctMWFkYi00ZDdkLTk2MmQtMmExZDNlNGEyMjBjXkEyXkFqcGc@._V1_.jpg"
+        thumbnail: "https://m.media-amazon.com/images/M/MV5BY2UwOGUxMzEtMzEyZi00NjEwLTkxOTMtYTljOWEzYjYyMWNjXkEyXkFqcGc@._V1_.jpg"
       },
       { 
         title: "Opus", 
@@ -2285,12 +1804,12 @@
         year: "2016", 
         url: "https://drive.google.com/file/d/1pb2jr3UTQ1VBUm7lXOiWJxqyZY782QNx/preview", 
         type: "movie",
-        thumbnail: "https://m.media-amazon.com/images/M/MV5BMTg4MWVjMjYtZGZhYS00MzlmLWFiYmItNDc1OGNmMzczZTM4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+        thumbnail: "https://m.media-amazon.com/images/M/MV5BMjA2NzEzNjIwNl5BMl5BanBnXkFtZTgwNzgwMTEzNzE@._V1_FMjpg_UX1000_.jpg"
       },
       { 
         title: "Cadillac Records", 
         year: "2008", 
-        url: "https://drive.google.com/file/d/12GjFJkbvcif4br6YUnPO-HU32R1Gwj_J/preview", 
+        url: "https://drive.google.com/file/d/12GjFJkbvcif4br6YUnPO-HU32R1Gwj_J/view?usp=sharing/preview", 
         type: "movie",
         thumbnail: "https://upload.wikimedia.org/wikipedia/en/0/01/Cadillac_records_poster.jpg"
       },
@@ -2564,7 +2083,7 @@
       }
     ];
 
-      // Search functionality
+    // Search functionality
     const searchInput = document.getElementById('searchInput');
     const searchResults = document.getElementById('searchResults');
 
@@ -2860,124 +2379,6 @@
           allVideosContainer.appendChild(videoItem);
         });
     }
-
-        // Series Display Functions - Updated
-    function showSeasons(seriesId, event) {
-      event.preventDefault();
-      event.stopPropagation();
-      
-      const series = seriesDatabase[seriesId];
-      if (!series) return;
-      
-      document.getElementById('seriesTitle').textContent = series.title;
-      const seasonsContainer = document.getElementById('seasonsContainer');
-      seasonsContainer.innerHTML = '';
-      
-      // Create season buttons
-      Object.keys(series.seasons).forEach(seasonNum => {
-        const seasonBtn = document.createElement('button');
-        seasonBtn.className = 'category';
-        seasonBtn.textContent = `Season ${seasonNum}`;
-        seasonBtn.onclick = (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          showEpisodes(seriesId, seasonNum);
-        };
-        seasonsContainer.appendChild(seasonBtn);
-      });
-      
-      document.getElementById('seasonsModal').style.display = 'block';
-      document.body.style.overflow = 'hidden';
-    }
-
-    function showEpisodes(seriesId, seasonNum) {
-      const series = seriesDatabase[seriesId];
-      if (!series || !series.seasons[seasonNum]) return;
-      
-      document.getElementById('seasonTitle').textContent = `${series.title} - Season ${seasonNum}`;
-      const episodesContainer = document.getElementById('episodesContainer');
-      episodesContainer.innerHTML = '';
-      
-      // Create episode list
-      Object.keys(series.seasons[seasonNum].episodes).forEach(episodeNum => {
-        const episode = series.seasons[seasonNum].episodes[episodeNum];
-        const episodeItem = document.createElement('div');
-        episodeItem.className = 'episode-item';
-        episodeItem.innerHTML = `
-          <div class="episode-title">Episode ${episodeNum}: ${episode.title}</div>
-          <button class="watch-episode-btn" onclick="openModal('${episode.url}', '${series.title} S${seasonNum}E${episodeNum}: ${episode.title}')">
-            Watch Now
-          </button>
-        `;
-        episodesContainer.appendChild(episodeItem);
-      });
-      
-      closeSeasonsModal();
-      document.getElementById('episodesModal').style.display = 'block';
-    }
-
-    function closeSeasonsModal() {
-      document.getElementById('seasonsModal').style.display = 'none';
-    }
-
-    function closeEpisodesModal() {
-      document.getElementById('episodesModal').style.display = 'none';
-      document.body.style.overflow = 'auto';
-    }
-
-    // Series Pagination - Updated
-    const seriesPerPage = 10;
-    let currentSeriesPage = 1;
-
-    function displaySeries(page) {
-      const seriesContainer = document.getElementById('seriesContainer');
-      seriesContainer.innerHTML = '';
-      
-      const start = (page - 1) * seriesPerPage;
-      const end = start + seriesPerPage;
-      const seriesKeys = Object.keys(seriesDatabase).slice(start, end);
-      
-      seriesKeys.forEach(seriesId => {
-        const series = seriesDatabase[seriesId];
-        const previewItem = document.createElement('div');
-        previewItem.className = 'preview-item';
-        previewItem.innerHTML = `
-          <div class="thumbnail-container" style="height: 250px;">
-            <img src="${series.poster}" alt="${series.title}" 
-                 onerror="this.src='https://via.placeholder.com/300x450?text=No+Thumbnail'">
-            <div class="play-button"></div>
-          </div>
-          <div class="preview-title">${series.title}</div>
-        `;
-        previewItem.addEventListener('click', (e) => showSeasons(seriesId, e));
-        seriesContainer.appendChild(previewItem);
-      });
-      
-      updateSeriesPagination();
-    }
-
-    function updateSeriesPagination() {
-      const seriesPagination = document.getElementById('seriesPagination');
-      const totalSeries = Object.keys(seriesDatabase).length;
-      const totalPages = Math.ceil(totalSeries / seriesPerPage);
-      
-      seriesPagination.innerHTML = '';
-      
-      for (let i = 1; i <= totalPages; i++) {
-        const pageBtn = document.createElement('button');
-        pageBtn.className = 'page-btn';
-        if (i === currentSeriesPage) pageBtn.classList.add('active');
-        pageBtn.textContent = i;
-        pageBtn.onclick = () => {
-          currentSeriesPage = i;
-          displaySeries(currentSeriesPage);
-        };
-        seriesPagination.appendChild(pageBtn);
-      }
-    }
-
-    // Initialize series display
-    displaySeries(currentSeriesPage);
 
     // Initialize movies and series display
     displayMovies(currentPage);
