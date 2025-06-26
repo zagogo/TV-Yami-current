@@ -2564,7 +2564,7 @@
       }
     ];
 
-    // Search functionality
+      // Search functionality
     const searchInput = document.getElementById('searchInput');
     const searchResults = document.getElementById('searchResults');
 
@@ -2592,334 +2592,278 @@
           `;
           resultItem.addEventListener('click', () => {
             if (item.url.includes('youtube.com') || item.url.includes('drive.google.com')) {
-                           openModal(item.url, `${item.title} ${item.year ? `(${item.year})` : ''}`);
+              openModal(item.url, `${item.title} ${item.year ? `(${item.year})` : ''}`);
             } else {
               window.open(item.url, '_blank');
             }
             searchResults.style.display = 'none';
+            searchInput.value = '';
           });
           searchResults.appendChild(resultItem);
         });
         searchResults.style.display = 'block';
       } else {
-        searchResults.style.display = 'none';
+        const noResults = document.createElement('div');
+        noResults.className = 'search-result-item';
+        noResults.textContent = 'No results found';
+        searchResults.appendChild(noResults);
+        searchResults.style.display = 'block';
       }
     });
 
     // Close search results when clicking outside
-    document.addEventListener('click', function(e) {
-      if (!searchResults.contains(e.target) {
+    document.addEventListener('click', function(event) {
+      if (!searchInput.contains(event.target) && !searchResults.contains(event.target)) {
         searchResults.style.display = 'none';
       }
     });
 
-    // Modal functionality
-    const modal = document.getElementById('videoModal');
-    const modalVideo = document.getElementById('modalVideo');
-    const currentVideoTitle = document.getElementById('currentVideoTitle');
+    // Modal functions
     let currentVideoIndex = 0;
-    let currentVideoList = [];
+    const videoUrls = contentDatabase.filter(item => 
+      item.url.includes('youtube.com') || item.url.includes('drive.google.com')
+    ).map(item => ({
+      url: item.url,
+      title: `${item.title} ${item.year ? `(${item.year})` : ''}`
+    }));
 
-    function openModal(url, title) {
-      modal.style.display = 'block';
-      modalVideo.src = url;
-      currentVideoTitle.textContent = title;
-      document.body.style.overflow = 'hidden';
+    function openModal(videoUrl, videoTitle = '') {
+      const modal = document.getElementById('videoModal');
+      const modalVideo = document.getElementById('modalVideo');
+      const videoTitleElement = document.getElementById('currentVideoTitle');
       
-      // Set current video list for next button functionality
-      currentVideoList = contentDatabase.filter(item => 
-        item.url.includes('youtube.com') || item.url.includes('drive.google.com')
-      );
-      
-      currentVideoIndex = currentVideoList.findIndex(item => 
-        item.url === url || `${item.title} ${item.year ? `(${item.year})` : ''}` === title
-      );
-    }
-
-    function closeModal() {
-      modal.style.display = 'none';
-      modalVideo.src = '';
-      document.body.style.overflow = 'auto';
+      currentVideoIndex = videoUrls.findIndex(item => item.url === videoUrl);
+      modalVideo.src = videoUrl;
+      videoTitleElement.textContent = videoTitle;
+      modal.style.display = "block";
+      document.body.style.overflow = "hidden";
     }
 
     function playNextVideo() {
-      if (currentVideoList.length === 0) return;
-      
-      currentVideoIndex = (currentVideoIndex + 1) % currentVideoList.length;
-      const nextVideo = currentVideoList[currentVideoIndex];
-      modalVideo.src = nextVideo.url;
-      currentVideoTitle.textContent = `${nextVideo.title} ${nextVideo.year ? `(${nextVideo.year})` : ''}`;
+      currentVideoIndex = (currentVideoIndex + 1) % videoUrls.length;
+      const nextVideo = videoUrls[currentVideoIndex];
+      document.getElementById('modalVideo').src = nextVideo.url;
+      document.getElementById('currentVideoTitle').textContent = nextVideo.title;
     }
 
-    // Close modal when clicking the X
-    document.querySelector('.close').addEventListener('click', closeModal);
+    function closeModal() {
+      const modal = document.getElementById('videoModal');
+      const modalVideo = document.getElementById('modalVideo');
+      modalVideo.src = "";
+      modal.style.display = "none";
+      document.body.style.overflow = "auto";
+    }
 
     // Close modal when clicking outside
-    window.addEventListener('click', function(event) {
-      if (event.target === modal) {
+    window.onclick = function(event) {
+      const modal = document.getElementById('videoModal');
+      if (event.target == modal) {
         closeModal();
       }
-    });
-
-    // Carousel functionality
-    let currentSlide = 0;
-    const carouselInner = document.querySelector('.carousel-inner');
-    const items = document.querySelectorAll('.carousel-item');
-    const totalItems = items.length;
-
-    function moveCarousel(direction) {
-      currentSlide = (currentSlide + direction + totalItems) % totalItems;
-      carouselInner.style.transform = `translateX(-${currentSlide * 100}%)`;
     }
 
-    // Auto-advance carousel
+    // Carousel functionality
+    let currentCarouselIndex = 0;
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    const carouselInner = document.querySelector('.carousel-inner');
+
+    function moveCarousel(direction) {
+      currentCarouselIndex += direction;
+      
+      if (currentCarouselIndex < 0) {
+        currentCarouselIndex = carouselItems.length - 1;
+      } else if (currentCarouselIndex >= carouselItems.length) {
+        currentCarouselIndex = 0;
+      }
+      
+      carouselInner.style.transform = `translateX(-${currentCarouselIndex * 100}%)`;
+    }
+
+    // Auto-rotate carousel
     setInterval(() => {
       moveCarousel(1);
     }, 5000);
 
-    // Series functionality
-    const seriesContainer = document.getElementById('seriesContainer');
-    const seasonsModal = document.getElementById('seasonsModal');
-    const episodesModal = document.getElementById('episodesModal');
-    const seriesTitle = document.getElementById('seriesTitle');
-    const seasonsContainer = document.getElementById('seasonsContainer');
-    const seasonTitle = document.getElementById('seasonTitle');
-    const episodesContainer = document.getElementById('episodesContainer');
-
-    // Display series in the series section
-    function displaySeries() {
-      seriesContainer.innerHTML = '';
-      
-      Object.keys(seriesDatabase).forEach(seriesId => {
-        const series = seriesDatabase[seriesId];
-        
-        const seriesItem = document.createElement('div');
-        seriesItem.className = 'preview-item';
-        seriesItem.innerHTML = `
-          <img src="${series.poster}" alt="${series.title}" class="preview-thumbnail" onerror="this.src='https://via.placeholder.com/180x250?text=No+Poster'">
-          <div class="preview-title">${series.title}</div>
-        `;
-        
-        seriesItem.addEventListener('click', () => {
-          openSeasonsModal(seriesId);
-        });
-        
-        seriesContainer.appendChild(seriesItem);
-      });
-    }
-
-    function openSeasonsModal(seriesId) {
-      const series = seriesDatabase[seriesId];
-      seriesTitle.textContent = series.title;
-      seasonsContainer.innerHTML = '';
-      
-      Object.keys(series.seasons).forEach(seasonNum => {
-        const seasonBtn = document.createElement('button');
-        seasonBtn.className = 'category';
-        seasonBtn.textContent = `Season ${seasonNum}`;
-        seasonBtn.addEventListener('click', () => {
-          openEpisodesModal(seriesId, seasonNum);
-        });
-        seasonsContainer.appendChild(seasonBtn);
-      });
-      
-      seasonsModal.style.display = 'block';
-    }
-
-    function closeSeasonsModal() {
-      seasonsModal.style.display = 'none';
-    }
-
-    function openEpisodesModal(seriesId, seasonNum) {
-      const series = seriesDatabase[seriesId];
-      const season = series.seasons[seasonNum];
-      
-      seasonTitle.textContent = `${series.title} - Season ${seasonNum}`;
-      episodesContainer.innerHTML = '';
-      
-      Object.keys(season.episodes).forEach(episodeNum => {
-        const episode = season.episodes[episodeNum];
-        
-        const episodeItem = document.createElement('div');
-        episodeItem.className = 'episode-item';
-        episodeItem.innerHTML = `
-          <div class="episode-title">Episode ${episodeNum}: ${episode.title}</div>
-          <button class="watch-episode-btn" onclick="window.open('${episode.url}', '_blank')">Watch Now</button>
-        `;
-        
-        episodesContainer.appendChild(episodeItem);
-      });
-      
-      seasonsModal.style.display = 'none';
-      episodesModal.style.display = 'block';
-    }
-
-    function closeEpisodesModal() {
-      episodesModal.style.display = 'none';
-    }
-
-    // Close modals when clicking the X
-    document.querySelectorAll('.modal .close').forEach(closeBtn => {
-      closeBtn.addEventListener('click', function() {
-        this.closest('.modal').style.display = 'none';
-      });
-    });
-
-    // Close modals when clicking outside
-    window.addEventListener('click', function(event) {
-      if (event.target === seasonsModal) {
-        closeSeasonsModal();
-      }
-      if (event.target === episodesModal) {
-        closeEpisodesModal();
+    // Make search work on Enter key
+    document.getElementById('searchInput').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        const query = this.value.toLowerCase();
+        if (query.length > 0) {
+          const results = contentDatabase.filter(item => 
+            item.title.toLowerCase().includes(query) || 
+            (item.year && item.year.includes(query)) ||
+            item.type.includes(query)
+          );
+          
+          if (results.length > 0) {
+            if (results[0].url.includes('youtube.com') || results[0].url.includes('drive.google.com')) {
+              openModal(results[0].url, `${results[0].title} ${results[0].year ? `(${results[0].year})` : ''}`);
+            } else {
+              window.open(results[0].url, '_blank');
+            }
+          }
+          searchResults.style.display = 'none';
+        }
       }
     });
 
-    // Movies functionality with pagination
-    const moviesContainer = document.getElementById('moviesContainer');
-    const pagination = document.getElementById('pagination');
+    // Ad fallback handling
+    window.addEventListener('load', function() {
+      const adContainers = document.querySelectorAll('.ad-container');
+      adContainers.forEach(container => {
+        const iframes = container.getElementsByTagName('iframe');
+        if (iframes.length === 0) {
+          const fallback = container.querySelector('.ad-fallback');
+          if (fallback) fallback.style.display = 'block';
+        }
+      });
+    });
+
+    // Movies pagination
     const moviesPerPage = 20;
-    let currentMoviePage = 1;
+    let currentPage = 1;
+    const moviesContainer = document.getElementById('moviesContainer');
+    const paginationContainer = document.getElementById('pagination');
 
-    function displayMovies(page = 1) {
-      currentMoviePage = page;
-      const startIndex = (page - 1) * moviesPerPage;
-      const endIndex = startIndex + moviesPerPage;
+    function displayMovies(page) {
+      moviesContainer.innerHTML = '';
+      const start = (page - 1) * moviesPerPage;
+      const end = start + moviesPerPage;
       const moviesToShow = contentDatabase
         .filter(item => item.type === 'movie')
-        .slice(startIndex, endIndex);
-      
-      moviesContainer.innerHTML = '';
+        .slice(start, end);
       
       moviesToShow.forEach(movie => {
         const movieItem = document.createElement('div');
         movieItem.className = 'movie-item';
         movieItem.innerHTML = `
-          <img src="${movie.thumbnail || 'https://via.placeholder.com/180x250?text=No+Thumbnail'}" alt="${movie.title}" class="movie-thumbnail" onclick="openModal('${movie.url}', '${movie.title} ${movie.year ? `(${movie.year})` : ''}')">
+          <div class="thumbnail-container" style="height: 250px;">
+            <img src="${movie.thumbnail}" alt="${movie.title}" 
+                 onerror="this.src='https://via.placeholder.com/300x450?text=No+Thumbnail'">
+            <div class="play-button"></div>
+          </div>
           <div class="movie-title">${movie.title} ${movie.year ? `(${movie.year})` : ''}</div>
         `;
+        movieItem.onclick = () => openModal(movie.url, `${movie.title} ${movie.year ? `(${movie.year})` : ''}`);
         moviesContainer.appendChild(movieItem);
       });
       
-      updatePagination(contentDatabase.filter(item => item.type === 'movie').length, pagination, currentMoviePage, 'displayMovies');
+      // Update pagination buttons
+      updatePagination();
     }
 
-    // All Movies functionality
-    const allMoviesSection = document.getElementById('allMoviesSection');
-    const allMoviesContainer = document.getElementById('allMoviesContainer');
-    const allMoviesPagination = document.getElementById('allMoviesPagination');
-    let currentAllMoviesPage = 1;
-
-    function showAllMovies() {
-      allMoviesSection.style.display = 'block';
-      allSeriesSection.style.display = 'none';
-      displayAllMovies();
-    }
-
-    function displayAllMovies(page = 1) {
-      currentAllMoviesPage = page;
-      const startIndex = (page - 1) * moviesPerPage;
-      const endIndex = startIndex + moviesPerPage;
-      const moviesToShow = contentDatabase
-        .filter(item => item.type === 'movie')
-        .sort((a, b) => a.title.localeCompare(b.title))
-        .slice(startIndex, endIndex);
+    function updatePagination() {
+      const totalMovies = contentDatabase.filter(item => item.type === 'movie').length;
+      const totalPages = Math.ceil(totalMovies / moviesPerPage);
       
-      allMoviesContainer.innerHTML = '';
+      paginationContainer.innerHTML = '';
       
-      moviesToShow.forEach(movie => {
-        const movieItem = document.createElement('div');
-        movieItem.className = 'movie-item';
-        movieItem.innerHTML = `
-          <img src="${movie.thumbnail || 'https://via.placeholder.com/180x250?text=No+Thumbnail'}" alt="${movie.title}" class="movie-thumbnail" onclick="openModal('${movie.url}', '${movie.title} ${movie.year ? `(${movie.year})` : ''}')">
-          <div class="movie-title">${movie.title} ${movie.year ? `(${movie.year})` : ''}</div>
-        `;
-        allMoviesContainer.appendChild(movieItem);
-      });
-      
-      updatePagination(contentDatabase.filter(item => item.type === 'movie').length, allMoviesPagination, currentAllMoviesPage, 'displayAllMovies');
-    }
-
-    // All Series functionality
-    const allSeriesSection = document.getElementById('allSeriesSection');
-    const allSeriesContainer = document.getElementById('allSeriesContainer');
-    const allSeriesPagination = document.getElementById('allSeriesPagination');
-    let currentAllSeriesPage = 1;
-
-    function showAllSeries() {
-      allSeriesSection.style.display = 'block';
-      allMoviesSection.style.display = 'none';
-      displayAllSeries();
-    }
-
-    function displayAllSeries(page = 1) {
-      currentAllSeriesPage = page;
-      const startIndex = (page - 1) * moviesPerPage;
-      const endIndex = startIndex + moviesPerPage;
-      const seriesToShow = contentDatabase
-        .filter(item => item.type === 'series')
-        .sort((a, b) => a.title.localeCompare(b.title))
-        .slice(startIndex, endIndex);
-      
-      allSeriesContainer.innerHTML = '';
-      
-      seriesToShow.forEach(series => {
-        const seriesItem = document.createElement('div');
-        seriesItem.className = 'movie-item';
-        seriesItem.innerHTML = `
-          <img src="${series.thumbnail || 'https://via.placeholder.com/180x250?text=No+Thumbnail'}" alt="${series.title}" class="movie-thumbnail" onclick="window.open('${series.url}', '_blank')">
-          <div class="movie-title">${series.title} ${series.year ? `(${series.year})` : ''}</div>
-        `;
-        allSeriesContainer.appendChild(seriesItem);
-      });
-      
-      updatePagination(contentDatabase.filter(item => item.type === 'series').length, allSeriesPagination, currentAllSeriesPage, 'displayAllSeries');
-    }
-
-    // Pagination helper function
-    function updatePagination(totalItems, paginationElement, currentPage, displayFunction) {
-      const totalPages = Math.ceil(totalItems / moviesPerPage);
-      paginationElement.innerHTML = '';
-      
-      if (totalPages <= 1) return;
-      
-      // Previous button
-      if (currentPage > 1) {
-        const prevBtn = document.createElement('button');
-        prevBtn.className = 'page-btn';
-        prevBtn.textContent = '❮';
-        prevBtn.addEventListener('click', () => {
-          window[displayFunction](currentPage - 1);
-        });
-        paginationElement.appendChild(prevBtn);
-      }
-      
-      // Page numbers
       for (let i = 1; i <= totalPages; i++) {
         const pageBtn = document.createElement('button');
-        pageBtn.className = `page-btn ${i === currentPage ? 'active' : ''}`;
+        pageBtn.className = 'page-btn';
+        if (i === currentPage) pageBtn.classList.add('active');
         pageBtn.textContent = i;
-        pageBtn.addEventListener('click', () => {
-          window[displayFunction](i);
-        });
-        paginationElement.appendChild(pageBtn);
-      }
-      
-      // Next button
-      if (currentPage < totalPages) {
-        const nextBtn = document.createElement('button');
-        nextBtn.className = 'page-btn';
-        nextBtn.textContent = '❯';
-        nextBtn.addEventListener('click', () => {
-          window[displayFunction](currentPage + 1);
-        });
-        paginationElement.appendChild(nextBtn);
+        pageBtn.onclick = () => {
+          currentPage = i;
+          displayMovies(currentPage);
+        };
+        paginationContainer.appendChild(pageBtn);
       }
     }
 
-    // Initialize the page
-    displaySeries();
-    displayMovies();
+    // Series pagination
+    const seriesPerPage = 10;
+    let currentSeriesPage = 1;
+    const seriesContainer = document.getElementById('seriesContainer');
+    const seriesPagination = document.getElementById('seriesPagination');
+
+    function displaySeries(page) {
+      seriesContainer.innerHTML = '';
+      const start = (page - 1) * seriesPerPage;
+      const end = start + seriesPerPage;
+      const seriesKeys = Object.keys(seriesDatabase).slice(start, end);
+      
+      seriesKeys.forEach(seriesId => {
+        const series = seriesDatabase[seriesId];
+        const previewItem = document.createElement('div');
+        previewItem.className = 'preview-item';
+        previewItem.innerHTML = `
+          <div class="thumbnail-container" style="height: 250px;">
+            <img src="${series.poster}" alt="${series.title}" class="preview-thumbnail"
+                 onerror="this.src='https://via.placeholder.com/300x450?text=No+Thumbnail'">
+            <div class="play-button"></div>
+          </div>
+          <div class="preview-title">${series.title}</div>
+        `;
+        previewItem.onclick = (e) => showSeasons(seriesId, e);
+        seriesContainer.appendChild(previewItem);
+      });
+      
+      // Update series pagination buttons
+      updateSeriesPagination();
+    }
+
+    function updateSeriesPagination() {
+      const totalSeries = Object.keys(seriesDatabase).length;
+      const totalPages = Math.ceil(totalSeries / seriesPerPage);
+      
+      seriesPagination.innerHTML = '';
+      
+      for (let i = 1; i <= totalPages; i++) {
+        const pageBtn = document.createElement('button');
+        pageBtn.className = 'page-btn';
+        if (i === currentSeriesPage) pageBtn.classList.add('active');
+        pageBtn.textContent = i;
+        pageBtn.onclick = () => {
+          currentSeriesPage = i;
+          displaySeries(currentSeriesPage);
+        };
+        seriesPagination.appendChild(pageBtn);
+      }
+    }
+
+    // All videos function
+    function showAllVideos() {
+      const allVideosSection = document.getElementById('allVideosSection');
+      const allVideosContainer = document.getElementById('allVideosContainer');
+      
+      // Hide other sections
+      document.querySelectorAll('.section').forEach(section => {
+        section.style.display = 'none';
+      });
+      
+      // Show all videos section
+      allVideosSection.style.display = 'block';
+      
+      // Clear previous results
+      allVideosContainer.innerHTML = '';
+      
+      // Filter only movies (exclude series if needed)
+      const moviesOnly = contentDatabase.filter(item => item.type === 'movie');
+      
+      // Sort A-Z and create video items
+      moviesOnly.sort((a,b) => a.title.localeCompare(b.title))
+        .forEach(video => {
+          const videoItem = document.createElement('div');
+          videoItem.className = 'all-videos-item';
+          
+          videoItem.innerHTML = `
+            <div class="thumbnail-container" style="height: 250px;">
+              <img src="${video.thumbnail}" alt="${video.title}" 
+                   onerror="this.src='https://via.placeholder.com/300x450?text=No+Thumbnail'">
+              <div class="play-button"></div>
+            </div>
+            <div class="movie-title">${video.title} ${video.year ? `(${video.year})` : ''}</div>
+          `;
+          
+          videoItem.onclick = () => openModal(video.url, `${video.title} ${video.year ? `(${video.year})` : ''}`);
+          allVideosContainer.appendChild(videoItem);
+        });
+    }
+
+    // Initialize movies and series display
+    displayMovies(currentPage);
+    displaySeries(currentSeriesPage);
   </script>
 </body>
 </html>
